@@ -9,12 +9,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sass`,
     {
-      resolve: "gatsby-plugin-antd",
-      options: {
-        style: true,
-      },
-    },
-    {
       resolve: `gatsby-plugin-less`,
       options: {
         javascriptEnabled: true,
