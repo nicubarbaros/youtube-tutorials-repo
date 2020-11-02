@@ -20,6 +20,8 @@ const Canvas = () => {
       //   type: "SET_SMOOTH_SCROLL",
       // });
       // console.log("planes", planes);
+      const slider = document.querySelectorAll(".text-slider-element");
+      console.log(slider);
       curtains
         .onError(() => {
           dispatch({
@@ -42,10 +44,22 @@ const Canvas = () => {
             payload: newScrollEffect,
           });
         })
-        .onScroll(() => {
+        .onScroll(event => {
+          // console.log(event)
           // get scroll deltas to apply the effect on scroll
           const delta = curtains.getScrollDeltas();
+          console.log(curtains.getScrollValues());
+          const scrollValue = curtains.getScrollValues();
+          // console.log(slider[0]);
+          // console.log(`translateX(-${scrollValue.y}px)`);
 
+          slider.forEach((element, index) => {
+            const value2 = scrollValue.y - 130 * index;
+            const percentage = 34 * index - scrollValue.y / 100;
+            element.style.cssText = `left: calc(${36 * index}% - ${value2}px)`;
+          });
+
+          // slider[0].style.cssText = `transform: translateX(-${scrollValue.y}px)`;
           // invert value for the effect
           delta.y = -delta.y;
 
@@ -56,26 +70,17 @@ const Canvas = () => {
             delta.y = -60;
           }
 
-          console.log(
-            "scroll-efect",
+          const newScrollEffect = curtains.lerp(
             someRef.current.scrollEffect,
-            delta.y,
-            scrollEffect
+            delta.y * 1.5,
+            0.5
           );
-
-          if (Math.abs(delta.y) > Math.abs(someRef.current.scrollEffect)) {
-            const newScrollEffect = curtains.lerp(
-              someRef.current.scrollEffect,
-              delta.y * 1.5,
-              0.5
-            );
-            console.log(newScrollEffect);
-            someRef.current.scrollEffect = newScrollEffect;
-            dispatch({
-              type: "SET_SCROLL_EFFECT",
-              payload: newScrollEffect,
-            });
-          }
+          console.log(newScrollEffect);
+          someRef.current.scrollEffect = newScrollEffect;
+          dispatch({
+            type: "SET_SCROLL_EFFECT",
+            payload: newScrollEffect,
+          });
         });
 
       dispatch({

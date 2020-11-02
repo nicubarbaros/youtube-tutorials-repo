@@ -1,6 +1,60 @@
+.plane-container {
+  margin: 20vh auto;
+  display: grid;
+  width: 60vw;
+
+  &.direct {
+    grid-template-columns: 3fr 7fr;
+
+    .plane-details {
+      order: 1;
+    }
+    .plane-image {
+      order: 2;
+    }
+  }
+  &.reverse {
+    grid-template-columns: 7fr 3fr;
+    .plane-details {
+      order: 2;
+    }
+    .plane-image {
+      order: 1;
+    }
+  }
+  .plane-image {
+    height: 50vh;
+
+    img {
+      display: none;
+    }
+  }
+}
+
+.plane-details {
+  width: 140px;
+  align-self: center;
+  justify-self: center;
+  h6 {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  p {
+    font-size: 12px;
+    line-height: 14.5px;
+    color: #666;
+  }
+
+  .vertical-line {
+    height: 1px;
+    width: 50px;
+    background-color: #424242;
+    margin: 20px 0 25px;
+  }
+}
 .Plane {
-  width: 40vw;
-  height: 500px;
+  width: 60vw;
+  height: 60vh;
   margin: 20vh auto;
 }
 

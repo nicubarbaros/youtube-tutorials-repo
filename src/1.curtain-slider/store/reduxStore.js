@@ -47,8 +47,10 @@ const CurtainsProvider = ({ children }) => {
         // custom scroll event
         // we'll render only while lerping the scroll
 
+        console.log(state.curtains);
         state.curtains.disableDrawing();
         smoothScroll.on("scroll", obj => {
+          console.log(obj);
           updateScroll(obj.scroll.x, obj.scroll.y);
 
           // render scene

@@ -71,19 +71,19 @@ const fs = `
     void main(){
         vec2 uv = vTextureCoord;
 
-        float scale = -abs(vDirection) * 0.8;
+        float scale = -abs(vDirection) * 0.5;
 
         uv = (uv - 0.5) * scale + uv;
 
-        float r = texture2D(planeTexture, vec2(uv.x - vDirection * 0.1, uv.y)).r;
-        float g = texture2D(planeTexture, vec2(uv.x - vDirection * 0.4, uv.y)).g;
-        float b = texture2D(planeTexture, vec2(uv.x - vDirection * 0.4, uv.y)).b;
+        float r = texture2D(planeTexture, vec2(uv.x, uv.y - vDirection * 0.1)).r;
+        float g = texture2D(planeTexture, vec2(uv.x, uv.y- vDirection * 0.5)).g;
+        float b = texture2D(planeTexture, vec2(uv.x, uv.y - vDirection * 0.5)).b;
         
         gl_FragColor = vec4(r, g, b, 1.0);  
     }
     `;
 
-const WebPlane = ({ url }) => {
+const WebPlane = ({ url, title, index, description }) => {
   const { state, dispatch } = useContext(CurtainsContext);
   const { scrollEffect } = state;
   const [statePlane, setPlane] = React.useState(null);
@@ -120,8 +120,7 @@ const WebPlane = ({ url }) => {
           // apply new parallax values after resize
         })
         .onRender(() => {
-         
-          plane.uniforms.direction.value = someRef.current.scrollEffect / 800;
+          plane.uniforms.direction.value = someRef.current.scrollEffect / 500;
         })
         .onReEnterView(() => {});
 
@@ -141,14 +140,22 @@ const WebPlane = ({ url }) => {
     someRef.current.scrollEffect = scrollEffect;
   }, [scrollEffect]);
 
+  const direction = index % 2 === 0 ? "direct" : "reverse";
   return (
-    <div className="Plane" ref={planeEl}>
-      <img
-        src={url}
-        alt=""
-        crossOrigin="anonymous"
-        data-sampler="planeTexture"
-      />
+    <div className={`plane-container ${direction}`}>
+      <div className="plane-details">
+        <h6>/{title}</h6>
+        <div className="vertical-line" />
+        <p>{description}</p>
+      </div>
+      <div className="plane-image" ref={planeEl}>
+        <img
+          src={url}
+          alt=""
+          crossOrigin="anonymous"
+          data-sampler="planeTexture"
+        />
+      </div>
     </div>
   );
 };

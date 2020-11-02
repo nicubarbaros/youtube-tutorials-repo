@@ -1,3 +1,19 @@
 body {
-  background-color: #141414;
+  background: #f2f2f2;
+  color: #424242;
+}
+
+.text-slider {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  pointer-events: none;
+
+  span {
+    position: fixed;
+    font-size: 90px;
+    font-weight: bold;
+    top: 50%;
+    transform: translate(calc(50vw - 50%), -50%);
+  }
 }
