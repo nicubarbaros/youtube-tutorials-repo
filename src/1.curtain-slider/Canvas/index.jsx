@@ -53,11 +53,11 @@ const Canvas = () => {
           // console.log(slider[0]);
           // console.log(`translateX(-${scrollValue.y}px)`);
 
-          slider.forEach((element, index) => {
-            const value2 = scrollValue.y - 130 * index;
-            const percentage = 34 * index - scrollValue.y / 100;
-            element.style.cssText = `left: calc(${36 * index}% - ${value2}px)`;
-          });
+          // slider.forEach((element, index) => {
+          //   const value2 = scrollValue.y - 130 * index;
+          //   const percentage = 34 * index - scrollValue.y / 100;
+          //   element.style.cssText = `left: calc(${36 * index}% - ${value2}px)`;
+          // });
 
           // slider[0].style.cssText = `transform: translateX(-${scrollValue.y}px)`;
           // invert value for the effect

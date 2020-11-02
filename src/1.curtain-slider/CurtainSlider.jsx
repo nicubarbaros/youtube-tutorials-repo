@@ -9,6 +9,7 @@ class CurtainSlider extends React.Component {
   render() {
     return (
       <CurtainsProvider>
+      <div className='banner top'/>
         <div id="page-content">
           {dumbData.map(({url, title, description}, index) => (
             <Plane
@@ -27,6 +28,7 @@ class CurtainSlider extends React.Component {
             <span className="text-slider-element">{element}</span>
           ))}
         </div> */}
+        <div className='banner bottom'/>
       </CurtainsProvider>
     );
   }
