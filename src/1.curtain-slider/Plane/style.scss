@@ -1,10 +1,10 @@
 .plane-container {
   margin: 20vh auto;
   display: grid;
-  width: 60vw;
+  width: 90vw;
 
   &.direct {
-    grid-template-columns: 3fr 7fr;
+    grid-template-columns: 2fr 8fr;
 
     .plane-details {
       order: 1;
@@ -14,7 +14,7 @@
     }
   }
   &.reverse {
-    grid-template-columns: 7fr 3fr;
+    grid-template-columns: 8fr 2fr;
     .plane-details {
       order: 2;
     }
@@ -23,7 +23,7 @@
     }
   }
   .plane-image {
-    height: 50vh;
+    height: 90vh;
 
     img {
       display: none;
