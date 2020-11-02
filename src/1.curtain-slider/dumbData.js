@@ -42,12 +42,5 @@ const unsplashUrls = [
       "A product microsite to showcase the 1990 ferrari concept designed by the industrial designer George.",
   },
 ];
-export const text = [
-  "Unsplash",
-  "Unsplash",
-  "Unsplash",
-  "Unsplash",
-  "Unsplash",
-  "Unsplash",
-];
+
 export default unsplashUrls;

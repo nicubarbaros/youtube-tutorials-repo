@@ -11,7 +11,6 @@ const initialState = {
   isActive: true,
   container: null,
   scrollEffect: 0,
-  planes: [],
 };
 
 const CurtainsContext = React.createContext(initialState);
@@ -66,12 +65,6 @@ const CurtainsProvider = ({ children }) => {
         return {
           ...state,
           scrollEffect: action.payload,
-        };
-      }
-      case "ADD_PLANE": {
-        return {
-          ...state,
-          planes: [...state.planes, action.payload],
         };
       }
       default:

@@ -49,7 +49,6 @@ const vs = `
     `;
 
 const fs = `
-        
     #ifdef GL_ES
     precision mediump float;
     #endif
@@ -84,7 +83,7 @@ const fs = `
     `;
 
 const WebPlane = ({ url, title, index, description }) => {
-  const { state, dispatch } = useContext(CurtainsContext);
+  const { state } = useContext(CurtainsContext);
   const { scrollEffect } = state;
   const [statePlane, setPlane] = React.useState(null);
   const planeEl = useRef();
@@ -124,17 +123,12 @@ const WebPlane = ({ url, title, index, description }) => {
         })
         .onReEnterView(() => {});
 
-      dispatch({
-        type: "ADD_PLANE",
-        payload: plane,
-      });
-
       // remove plane if we're unmounting the component
       return () => {
         plane.remove();
       };
     }
-  }, [state.container, state.curtains, dispatch]);
+  }, [state.container, state.curtains]);
 
   React.useEffect(() => {
     someRef.current.scrollEffect = scrollEffect;
