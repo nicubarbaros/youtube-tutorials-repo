@@ -49,38 +49,55 @@ const vs = `
     `;
 
 const fs = `
-    #ifdef GL_ES
-    precision mediump float;
-    #endif
+#ifdef GL_ES
+precision mediump float;
+#endif
 
-    #define PI2 6.28318530718
-    #define PI 3.14159265359
-    #define S(a,b,n) smoothstep(a,b,n)
+#define PI2 6.28318530718
+#define S(a,b,n) smoothstep(a,b,n)
+
+// get our varyings
+varying vec3 vVertexPosition;
+varying vec2 vTextureCoord;
+
+
+// our texture sampler (default name, to use a different name please refer to the documentation)
+uniform sampler2D planeTexture;
+
+uniform float vDirection;
+uniform float uTime;
+
+void main(){
+    vec2 uv = vTextureCoord;
+
+    float scale = -abs(vDirection) * 0.5;
+
+    uv = (uv - 0.5) * scale + uv;
+
+    float r = texture2D(planeTexture, vec2(uv.x, uv.y - vDirection * 0.1)).r;
+    float g = texture2D(planeTexture, vec2(uv.x, uv.y- vDirection * 0.5)).g;
+    float b = texture2D(planeTexture, vec2(uv.x, uv.y - vDirection * 0.5)).b;
     
-    // get our varyings
-    varying vec3 vVertexPosition;
-    varying vec2 vTextureCoord;
+    gl_FragColor = vec4(r, g, b, 1.0);  
 
 
-    // our texture sampler (default name, to use a different name please refer to the documentation)
-    uniform sampler2D planeTexture;
-    
-    varying float vDirection;
+    // get our texture coords
+vec2 textureCoord = vTextureCoord;
 
-    void main(){
-        vec2 uv = vTextureCoord;
+const float PI = 3.141592;
 
-        float scale = -abs(vDirection) * 0.5;
+textureCoord.x += (
+cos(textureCoord.x * 2.5 + ((uTime * (PI / 3.0)) * 0.031))
++ cos(textureCoord.y * 2.5 + ((uTime * (PI / 2.489)) * 0.017))
+) * 0.0075;
 
-        uv = (uv - 0.5) * scale + uv;
+textureCoord.y += (
+sin(textureCoord.y * 2.5 + ((uTime * (PI / 2.023)) * 0.023))
++ sin(textureCoord.x * 2.5 + ((uTime * (PI / 3.1254)) * 0.037))
+) * 0.0125;
 
-        float r = texture2D(planeTexture, vec2(uv.x, uv.y - vDirection * 0.1)).r;
-        float g = texture2D(planeTexture, vec2(uv.x, uv.y- vDirection * 0.5)).g;
-        float b = texture2D(planeTexture, vec2(uv.x, uv.y - vDirection * 0.5)).b;
-        
-        gl_FragColor = vec4(r, g, b, 1.0);  
+gl_FragColor = texture2D(planeTexture, textureCoord);
 
-        
     }
     `;
 
@@ -106,6 +123,11 @@ const WebPlane = ({ url, title, index, description }) => {
             type: "1f",
             value: 0,
           },
+          time: {
+            name: "uTime",
+            type: "1f",
+            value: 0,
+          },
         },
       };
 
@@ -120,6 +142,8 @@ const WebPlane = ({ url, title, index, description }) => {
           // apply new parallax values after resize
         })
         .onRender(() => {
+          plane.uniforms.time.value++;
+
           plane.uniforms.direction.value = someRef.current.scrollEffect / 500;
         })
         .onReEnterView(() => {});
