@@ -79,13 +79,14 @@ const fs = `
         float b = texture2D(planeTexture, vec2(uv.x, uv.y - vDirection * 0.5)).b;
         
         gl_FragColor = vec4(r, g, b, 1.0);  
+
+        
     }
     `;
 
 const WebPlane = ({ url, title, index, description }) => {
   const { state } = useContext(CurtainsContext);
   const { scrollEffect } = state;
-  const [statePlane, setPlane] = React.useState(null);
   const planeEl = useRef();
   const someRef = useRef({ scrollEffect: 0 });
 
@@ -98,7 +99,7 @@ const WebPlane = ({ url, title, index, description }) => {
         vertexShader: vs,
         fragmentShader: fs,
         widthSegments: 40,
-        heightSegments: 40, // we now have 40*40*6 = 9600 vertices !
+        heightSegments: 40,
         uniforms: {
           direction: {
             name: "uDirection",

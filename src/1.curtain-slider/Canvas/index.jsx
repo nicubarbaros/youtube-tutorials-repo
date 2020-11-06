@@ -15,11 +15,6 @@ const Canvas = () => {
       // set our curtains instance container once
       curtains.setContainer(container.current);
 
-      // dispatch({
-      //   type: "SET_SMOOTH_SCROLL",
-      // });
-      const slider = document.querySelectorAll(".text-slider-element");
-      console.log(slider);
       curtains
         .onError(() => {
           dispatch({
