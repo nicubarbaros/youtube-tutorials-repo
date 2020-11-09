@@ -16,11 +16,6 @@ const Canvas = () => {
       curtains.setContainer(container.current);
 
       curtains
-        .onError(() => {
-          dispatch({
-            type: "SET_CURTAINS_ERROR",
-          });
-        })
         .onContextLost(() => {
           curtains.restoreContext();
         })

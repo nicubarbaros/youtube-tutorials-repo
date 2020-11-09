@@ -3,103 +3,8 @@ import { Plane, Vec2, Vec3 } from "curtainsjs";
 
 import "./style.scss";
 import { CurtainsContext } from "../store/reduxStore";
-
+import { vs, fs } from "./shaders.js";
 // vertex and fragment shaders
-const vs = `
-          
-    #ifdef GL_ES
-    precision mediump float;
-    #endif
-    
-    #define PI 3.14159265359
-    
-    // those are the mandatory attributes that the lib sets
-    attribute vec3 aVertexPosition;
-    attribute vec2 aTextureCoord;
-
-    // those are mandatory uniforms that the lib sets and that contain our model view and projection matrix
-    uniform mat4 uMVMatrix;
-    uniform mat4 uPMatrix;
-
-    uniform mat4 planeTextureMatrix;
-
-    // if you want to pass your vertex and texture coords to the fragment shader
-    varying vec3 vVertexPosition;
-    varying vec2 vTextureCoord;
-
-    varying float vDirection;
-
-    uniform float uDirection;
-
-    void main() {
-        vec3 position = aVertexPosition;
-
-        float y = sin((position.x * 0.5 - 0.5) * PI) * uDirection;
-
-        position.y -= y;
-        
-        gl_Position = uPMatrix * uMVMatrix * vec4(position, 1.0);
-
-        // set the varyings
-        vTextureCoord = (planeTextureMatrix * vec4(aTextureCoord, 0., 1.)).xy;
-        vVertexPosition = position;
-
-        vDirection = uDirection;
-    }
-    `;
-
-const fs = `
-#ifdef GL_ES
-precision mediump float;
-#endif
-
-#define PI2 6.28318530718
-#define S(a,b,n) smoothstep(a,b,n)
-
-// get our varyings
-varying vec3 vVertexPosition;
-varying vec2 vTextureCoord;
-
-
-// our texture sampler (default name, to use a different name please refer to the documentation)
-uniform sampler2D planeTexture;
-
-uniform float vDirection;
-uniform float uTime;
-
-void main(){
-    vec2 uv = vTextureCoord;
-
-    float scale = -abs(vDirection) * 0.5;
-
-    uv = (uv - 0.5) * scale + uv;
-
-    float r = texture2D(planeTexture, vec2(uv.x, uv.y - vDirection * 0.1)).r;
-    float g = texture2D(planeTexture, vec2(uv.x, uv.y- vDirection * 0.5)).g;
-    float b = texture2D(planeTexture, vec2(uv.x, uv.y - vDirection * 0.5)).b;
-    
-    gl_FragColor = vec4(r, g, b, 1.0);  
-
-
-    // get our texture coords
-vec2 textureCoord = vTextureCoord;
-
-const float PI = 3.141592;
-
-textureCoord.x += (
-cos(textureCoord.x * 2.5 + ((uTime * (PI / 3.0)) * 0.031))
-+ cos(textureCoord.y * 2.5 + ((uTime * (PI / 2.489)) * 0.017))
-) * 0.0075;
-
-textureCoord.y += (
-sin(textureCoord.y * 2.5 + ((uTime * (PI / 2.023)) * 0.023))
-+ sin(textureCoord.x * 2.5 + ((uTime * (PI / 3.1254)) * 0.037))
-) * 0.0125;
-
-gl_FragColor = texture2D(planeTexture, textureCoord);
-
-    }
-    `;
 
 const WebPlane = ({ url, title, index, description }) => {
   const { state } = useContext(CurtainsContext);
@@ -109,8 +14,6 @@ const WebPlane = ({ url, title, index, description }) => {
 
   useLayoutEffect(() => {
     const curtains = state.curtains;
-    // curtains container has been set
-    console.log("afaf");
     if (state.container) {
       const planeParams = {
         vertexShader: vs,
@@ -133,20 +36,11 @@ const WebPlane = ({ url, title, index, description }) => {
 
       const plane = new Plane(curtains, planeEl.current, planeParams);
 
-      plane
-        .onReady(() => {
-          // apply parallax on load
-          // once everything is ready, display everything
-        })
-        .onAfterResize(() => {
-          // apply new parallax values after resize
-        })
-        .onRender(() => {
-          plane.uniforms.time.value++;
+      plane.onRender(() => {
+        plane.uniforms.time.value++;
 
-          plane.uniforms.direction.value = someRef.current.scrollEffect / 500;
-        })
-        .onReEnterView(() => {});
+        plane.uniforms.direction.value = someRef.current.scrollEffect / 500;
+      });
 
       // remove plane if we're unmounting the component
       return () => {
