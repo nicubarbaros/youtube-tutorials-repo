@@ -1,8 +1,217 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald:300;700&display=swap");
-
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Ubuntu, "Helvetica Neue", sans-serif;
+  cursor: none;
 }
 
+.main-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  .hover-left {
+    content: "";
 
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 20vw;
+    z-index: 1;
+
+    &:hover ~ .container-right {
+      clip-path: inset(0 0% 0% 80%);
+    }
+  }
+
+  .hover-right {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 20vw;
+    z-index: 1;
+    &:hover ~ .container-right {
+      clip-path: inset(0 0% 0% 20%);
+    }
+  }
+}
+
+.container-right,
+.container-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+}
+
+.container-right {
+  overflow: hidden;
+  clip-path: inset(0 0% 0% 50%);
+  transition: clip-path 1s cubic-bezier(0.77, 0, 0.175, 1);
+
+  .container-big-title {
+    right: 0;
+  }
+}
+
+.container-left {
+  .container-big-title {
+    left: 0;
+  }
+}
+.image-player {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.resp-iframe {
+  box-sizing: border-box;
+  height: 56.25vw;
+  left: 50%;
+  min-height: 100%;
+  min-width: 100%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  width: 177.77777778vh;
+  pointer-events: none;
+
+  //fallback
+
+  background: black;
+}
+
+.center-text {
+  position: fixed;
+  top: 50%;
+  z-index: 1;
+  color: white;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12vw;
+  mix-blend-mode: difference;
+  font-weight: 100;
+  opacity: 1;
+  transition: opacity 0.25s ease-in-out;
+}
+
+.navigation {
+  position: fixed;
+  top: 1rem;
+  font-size: 1.5em;
+  mix-blend-mode: difference;
+  color: #fff;
+  z-index: 2;
+
+  &.left {
+    text-align: left;
+    left: 1.25rem;
+
+    &:hover ~ .container-right {
+      clip-path: inset(0 0% 0% 100%);
+    }
+    &:hover {
+      ~ {
+        .container-left {
+          .container-big-title {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  &.right {
+    text-align: right;
+    right: 1.25rem;
+    &:hover ~ .container-right {
+      clip-path: inset(0 0% 0% 0%);
+    }
+    &:hover {
+      ~ {
+        .container-right {
+          .container-big-title {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  li,
+  h2 {
+    line-height: 1.2em;
+    padding-bottom: 0.5em;
+  }
+
+  li {
+    opacity: 0;
+    transform: translateY(-10px);
+
+    // animation-fill-mode: forwards;
+    transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+  }
+
+  @for $i from 10 through 1 {
+    li:nth-child(#{10-$i}n) {
+      transition-delay: #{$i * 0.05}s !important;
+    }
+  }
+
+  &:hover {
+    ~ {
+      .center-text {
+        opacity: 0;
+      }
+    }
+    li {
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}n) {
+          transition-delay: #{$i * 0.05}s !important;
+        }
+      }
+
+      opacity: 0.5;
+      transform: translateY(0);
+
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.container-big-title {
+  position: fixed;
+  z-index: 2;
+  bottom: 5rem;
+  mix-blend-mode: difference;
+  color: #fff;
+  pointer-events: none;
+  font-size: 6.625em;
+  letter-spacing: -0.00066em;
+  line-height: 1em;
+  text-transform: uppercase;
+  font-family: "Merriweather", serif;
+
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+}
+
+.fade {
+  transition: opacity 0.3s ease-in-out;
+  &.fade-out {
+    opacity: 0;
+  }
+  &.fade-in {
+    opacity: 1;
+  }
+}
