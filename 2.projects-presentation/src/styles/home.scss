@@ -79,7 +79,7 @@ body {
   left: 50%;
   min-height: 100%;
   min-width: 100%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1.1);
   position: absolute;
   top: 50%;
   width: 177.77777778vh;
@@ -149,7 +149,7 @@ body {
   li,
   h2 {
     line-height: 1.2em;
-    padding-bottom: 0.5em;
+    margin-bottom: 0.5em;
   }
 
   li {

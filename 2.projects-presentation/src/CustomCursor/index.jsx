@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CursorContext } from "./CursorManager";
 import "./style.scss";
 
- const CustomCursor = () => {
-  const mainCursor = React.useRef(null);
+const CustomCursor = () => {
   const secondaryCursor = React.useRef(null);
-
+  const { size } = useContext(CursorContext);
   const positionRef = React.useRef({
     mouseX: 0,
     mouseY: 0,
@@ -25,10 +25,6 @@ import "./style.scss";
         mouseX - secondaryCursor.current.clientWidth / 2;
       positionRef.current.mouseY =
         mouseY - secondaryCursor.current.clientHeight / 2;
-
-      mainCursor.current.style.transform = `translate3d(${mouseX -
-        mainCursor.current.clientWidth / 2}px, ${mouseY -
-        mainCursor.current.clientHeight / 2}px, 0)`;
     });
 
     return () => {};
@@ -75,8 +71,7 @@ import "./style.scss";
 
   return (
     <div>
-      <div className="main-cursor" ref={mainCursor}></div>
-      <div className="secondary-cursor" ref={secondaryCursor}></div>
+      <div className={`secondary-cursor ${size}`} ref={secondaryCursor}></div>
     </div>
   );
 };

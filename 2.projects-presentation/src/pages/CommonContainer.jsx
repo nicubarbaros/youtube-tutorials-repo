@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import cn from "classnames";
+import { CursorContext } from "../CustomCursor/CursorManager";
 
 export default function CommonContainer(props) {
   const [first] = props.mediaData;
   const [activeMedia, setActiveMedia] = useState(first);
-
+  const { setSize } = useContext(CursorContext);
   return (
     <>
       <div className={`navigation ${props.position}`}>
@@ -16,7 +17,11 @@ export default function CommonContainer(props) {
                 active: media.mediaUrl === activeMedia.mediaUrl,
               })}
               key={index}
-              onMouseOver={() => setActiveMedia(media)}
+              onMouseEnter={() => {
+                setActiveMedia(media);
+                setSize("regular");
+              }}
+              onMouseLeave={() => setSize("small")}
             >
               {media.title}
             </li>
