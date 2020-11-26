@@ -29,30 +29,30 @@ const imageData = [
 const videoData = [
   {
     mediaUrl:
-      "https://player.vimeo.com/video/291383853?autoplay=1&loop=1&controls=0",
+      "https://player.vimeo.com/video/291383853?background=1",
     title: "This is Cuba",
   },
 
   {
     mediaUrl:
-      "https://player.vimeo.com/video/477068055?autoplay=1&loop=1&controls=0",
+      "https://player.vimeo.com/video/477068055?background=1",
     title: "Tesla 584",
   },
 
   {
-    mediaUrl: 'https://player.vimeo.com/video/477245251?autoplay=1&loop=1&controls=0',
+    mediaUrl: 'https://player.vimeo.com/video/477245251?background=1',
     title: 'Afri-Can'
   },
   {
-    mediaUrl: 'https://player.vimeo.com/video/282770027?autoplay=1&loop=1&controls=0',
+    mediaUrl: 'https://player.vimeo.com/video/282770027?background=1',
     title: 'SAMSUNG / Copiloto'
   },
   {
-    mediaUrl: 'https://player.vimeo.com/video/477735526?autoplay=1&loop=1&controls=0',
+    mediaUrl: 'https://player.vimeo.com/video/477735526?background=1',
     title: 'KAMCHATKA'
   },
   {
-    mediaUrl: 'https://player.vimeo.com/video/114950712?autoplay=1&loop=1&controls=0',
+    mediaUrl: 'https://player.vimeo.com/video/114950712?background=1',
     title: 'STILLNESS ARISES'
   }
 ];
