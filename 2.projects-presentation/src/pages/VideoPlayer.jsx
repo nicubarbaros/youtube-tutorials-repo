@@ -14,7 +14,7 @@ export default function VideoPlayer({ src }) {
     setTimeout(() => {
       setFade("fade-in");
     }, 1000);
-  }, src);
+  }, [src]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -24,6 +24,7 @@ export default function VideoPlayer({ src }) {
 
   return (
     <iframe
+    title={src}
       className={`resp-iframe fade ${fade}`}
       src={stateSrc}
       width="640"

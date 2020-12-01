@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { videoData } from "../data.js";
 import VideoPlayer from "./VideoPlayer.jsx";
 import CommonContainer from "./CommonContainer.jsx";
