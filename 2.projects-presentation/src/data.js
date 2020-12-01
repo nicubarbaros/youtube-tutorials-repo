@@ -1,6 +1,11 @@
 const imageData = [
   {
     mediaUrl:
+      "https://images.unsplash.com/photo-1504713593912-34c2f54aa251?ixlib=rb-1.2.1&auto=format&fit=crop&w=2425&q=80",
+    title: "Playa Sunset",
+  },
+  {
+    mediaUrl:
       "https://images.unsplash.com/photo-1473433025194-381637d4c01f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2700&q=80",
     title: "K Teenager",
   },
@@ -16,11 +21,6 @@ const imageData = [
   },
   {
     mediaUrl:
-      "https://images.unsplash.com/photo-1504713593912-34c2f54aa251?ixlib=rb-1.2.1&auto=format&fit=crop&w=2425&q=80",
-    title: "Playa Sunset",
-  },
-  {
-    mediaUrl:
       "https://images.unsplash.com/photo-1596495108490-a875d353baa1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1402&q=80",
     title: "Burning Man",
   },
@@ -28,37 +28,34 @@ const imageData = [
 
 const videoData = [
   {
-    mediaUrl:
-      "https://player.vimeo.com/video/291383853?background=1",
+    mediaUrl: "https://player.vimeo.com/video/477735526?background=1",
+    title: "KAMCHATKA",
+  },
+  {
+    mediaUrl: "https://player.vimeo.com/video/291383853?background=1",
     title: "This is Cuba",
   },
 
   {
-    mediaUrl:
-      "https://player.vimeo.com/video/477068055?background=1",
+    mediaUrl: "https://player.vimeo.com/video/477068055?background=1",
     title: "Tesla 584",
   },
 
   {
-    mediaUrl: 'https://player.vimeo.com/video/477245251?background=1',
-    title: 'Afri-Can'
+    mediaUrl: "https://player.vimeo.com/video/477245251?background=1",
+    title: "Afri-Can",
   },
   {
-    mediaUrl: 'https://player.vimeo.com/video/282770027?background=1',
-    title: 'SAMSUNG / Copiloto'
+    mediaUrl: "https://player.vimeo.com/video/282770027?background=1",
+    title: "SAMSUNG / Copiloto",
   },
   {
-    mediaUrl: 'https://player.vimeo.com/video/477735526?background=1',
-    title: 'KAMCHATKA'
+    mediaUrl: "https://player.vimeo.com/video/114950712?background=1",
+    title: "STILLNESS ARISES",
   },
-  {
-    mediaUrl: 'https://player.vimeo.com/video/114950712?background=1',
-    title: 'STILLNESS ARISES'
-  }
 ];
-
 
 /**
  * muted=1
  */
-export { videoData, imageData};
+export { videoData, imageData };

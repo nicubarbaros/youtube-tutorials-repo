@@ -15,11 +15,9 @@ const Index = () => {
         <LeftContainer />
         <RightContainer />
 
-        {/* <h1 className="center-text">효도</h1> */}
         <h1 className="center-text">STORIES</h1>
       </div>
     </CursorManager>
   );
 };
 export default Index;
-//https://www.optilingo.com/blog/korean/beautiful-korean-words/
