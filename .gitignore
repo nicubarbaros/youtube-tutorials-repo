@@ -34,6 +34,8 @@ build/Release
 
 # Dependency directories
 2.projects-presentation/node_modules/
+3.intersection-observer/node_modules/
+
 jspm_packages/
 
 # Typescript v1 declaration files
@@ -57,6 +59,11 @@ typings/
 # gatsby files
 2.projects-presentation/.cache/
 2.projects-presentation/public
+
+# gatsby files
+3.intersection-observer/.cache/
+3.intersection-observer/public
+
 
 # Mac files
 .DS_Store

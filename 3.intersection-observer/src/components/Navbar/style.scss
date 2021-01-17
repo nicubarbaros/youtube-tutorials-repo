@@ -1,0 +1,20 @@
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  box-sizing: border-box;
+  z-index: 1;
+  position: fixed;
+
+  mix-blend-mode: difference;
+  color: white;
+
+  ul {
+    display: flex;
+
+    li {
+      margin: 0 15px;
+    }
+  }
+}
