@@ -14,6 +14,9 @@ const Index = () => {
 
   useEffect(() => {
     if (ref) {
+      if (typeof window === "undefined" || !window.document) {
+        return
+      }
       const scroll = new LocomotiveScroll({
         el: ref.current,
         smooth: true,
@@ -32,7 +35,9 @@ const Index = () => {
       />
     ))
   );
-
+  if (typeof window === "undefined" || !window.document) {
+    return null
+  }
   return (
     <>
       <div className="top"></div>
