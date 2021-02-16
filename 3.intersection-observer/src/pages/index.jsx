@@ -5,7 +5,7 @@ import "../styles/home.scss";
 const loader = () => <div>Loading.</div>;
 //
 const HomeLazy = Loadable({
-  loader: () => import("./GOD"), 
+  loader: () => import("../containers/GOD"), 
   loading: loader,
 });
 
