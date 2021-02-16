@@ -14,7 +14,6 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@loadable/component": "^5.14.1",
     "classnames": "^2.2.6",
     "curtainsjs": "^7.1.4",
     "eslint": "^7.14.0",
@@ -27,7 +26,8 @@
     "locomotive-scroll": "^4.0.6",
     "node-sass": "^4.13.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-loadable": "^5.5.0"
   },
   "devDependencies": {
     "prettier": "^1.19.1"

@@ -1,8 +1,13 @@
 import React from "react";
-import Loadable from "@loadable/component";
+import Loadable from "react-loadable";
 import "../styles/home.scss";
 
-const HomeLazy = Loadable(() => import("./Home"));
+const loader = () => <div>Loading.</div>;
+//
+const HomeLazy = Loadable({
+  loader: () => import("./Home"), 
+  loading: loader,
+});
 
 const Index = () => {
   return (
