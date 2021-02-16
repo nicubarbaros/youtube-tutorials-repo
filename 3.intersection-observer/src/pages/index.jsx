@@ -1,18 +1,13 @@
 import React from "react";
-
+import Loadable from "@loadable/component";
 import "../styles/home.scss";
 
-const HomeLazy = React.lazy(() => import("./Home"));
-const Index = () => {
-  const isSSR = typeof window === "undefined";
+const HomeLazy = Loadable(() => import("./Home"));
 
+const Index = () => {
   return (
     <>
-      {!isSSR && (
-        <React.Suspense fallback={<div />}>
-          <HomeLazy />
-        </React.Suspense>
-      )}
+      <HomeLazy />
     </>
   );
 };
