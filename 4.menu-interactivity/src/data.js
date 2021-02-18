@@ -12,7 +12,7 @@ const photos = [
   {
     title: "Vans skaters",
     url:
-      "https://images.unsplash.com/photo-1523381087796-9a129d92ce9f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2700&q=100",
+      "https://images.unsplash.com/photo-1523380792555-525a3c8611f1?ixid=MXwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MjQ3fHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=100",
   },
   {
     title: "Lego builders",

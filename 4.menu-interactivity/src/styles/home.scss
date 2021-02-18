@@ -7,39 +7,100 @@
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Ubuntu, "Helvetica Neue", sans-serif;
-
-  background-color: #f7ebdc;
 }
 
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 50px 4vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: white;
+  font-family: "Raleway";
+  font-weight: 600;
+  mix-blend-mode: difference;
+
+  ul {
+    display: flex;
+
+    li {
+      margin: 0 15px;
+    }
+  }
+}
+
+.top-banner {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  padding: 0 4vw;
+  color: white;
+  font-family: "Raleway";
+
+  .top-banner-content {
+    font-size: 5rem;
+    line-height: 1.3;
+
+    span {
+      font-style: italic;
+      font-weight: 600;
+    }
+  }
+
+  .top-banner-scrolldown {
+    font-size: 3rem;
+    position: absolute;
+    bottom: 10%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+  }
+}
 .menu-list {
-  margin-top: 40vh;
+  margin-top: 100vh;
+  background-color: #003fff;
+  position: relative;
+  // margin-top: 40vh;
+  padding: 1vh 0;
+
   .menu-item {
     position: relative;
   }
+
   .menu-title {
-    font-size: 10rem;
+    font-size: 9rem;
     text-transform: uppercase;
     font-family: "Fugaz One", cursive;
     // font-family: 'Anton', sans-serif;
-    padding: 0 4vw;
-    
-
-    &:not(.clone){ 
-
+    padding: 4vh 4vw;
+    z-index: 1;
+    &:not(.clone) {
       margin: 10vh 0;
-      // -webkit-text-stroke-width: 3px;
-      // -webkit-text-stroke-color: black;
-      // color: transparent;
-      color: black;
-      opacity: 0.5;
+      -webkit-text-stroke-width: 3px;
+      -webkit-text-stroke-color: white;
+      color: transparent;
+      // color: black;
+      // opacity: 0.5;
 
       &:hover {
         cursor: pointer;
-        ~ .menu-image {
+
+        ~ .menu-image-container .menu-image {
           opacity: 1;
+          transform: scale(1.1);
+          filter: blur(0) brightness(1);
         }
         ~ .clone {
-            clip-path: inset(0 0 0% 0);
+          clip-path: inset(0 0 0% 0);
         }
       }
     }
@@ -48,23 +109,31 @@ body {
       position: absolute;
       top: 0;
       pointer-events: none;
-      color: black;
+      color: white;
       clip-path: inset(0 100% 0 0%);
-      transition: all 0.25s ease-in-out;
+      transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
     }
-    
- 
   }
-  .menu-image {
-    position: fixed;
-    opacity: 0;
-    background-size: cover;
-    background-position: center;
+
+  .menu-image-container {
+    position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    transform: scale(0.5);
-    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .menu-image {
+    opacity: 0;
+    background-size: cover;
+    background-position: center;
+
+    transform: scale(1);
+    filter: blur(1px) brightness(3);
+
+    transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+    width: 100%;
+    height: 100%;
   }
 }
