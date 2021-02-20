@@ -13,7 +13,24 @@ const Index = () => {
         </ul>
       </div>
       <div className="top-banner">
-        <div className="top-banner-content"><h1>independent designer</h1> based in <span>Denmark</span></div>
+        <div className="top-banner-content">
+          <h1>independent designer</h1> based in <span>Denmark</span>
+          <iframe
+            title={"src"}
+            className={`resp-iframe `}
+            src={
+              "https://player.vimeo.com/video/91284753?autoplay=1&loop=1&autopause=0&muted=1"
+            }
+            width="640"
+            height="360"
+            frameborder="0"
+            webkitallowfullscreen
+            mozallowfullscreen
+            allowfullscreen
+            allow="autoplay; fullscreen"
+            controls="0"
+          ></iframe>
+        </div>
         <div className="top-banner-scrolldown">
           <span>☟</span>
         </div>

@@ -2,27 +2,27 @@ const photos = [
   {
     title: "Nike workout",
     url:
-      "https://images.unsplash.com/photo-1523381087796-9a129d92ce9f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2700&q=100",
+      "https://images.unsplash.com/photo-1509983165097-0c31a863e3f3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2250&q=100",
   },
   {
-    title: "Tech sunglasses",
+    title: "Virtual Reality",
     url:
-      "https://images.unsplash.com/photo-1523381294911-8d3cead13475?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2700&q=100",
+      "https://images.unsplash.com/photo-1588590560438-5e27fe3f6b71?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=3372&q=100",
   },
   {
     title: "Vans skaters",
     url:
-      "https://images.unsplash.com/photo-1523380792555-525a3c8611f1?ixid=MXwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MjQ3fHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=100",
+      "https://images.unsplash.com/photo-1612100389024-106c3cfdb7d0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3331&q=100",
   },
   {
     title: "Lego builders",
     url:
-      "https://images.unsplash.com/photo-1523381016839-fa70bcb61de4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2700&q=100",
+      "https://images.unsplash.com/photo-1572790082878-f254f61214fa?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=3289&q=100",
   },
   {
     title: "Adidas kicks",
     url:
-      "https://images.unsplash.com/photo-1523380744952-b7e00e6e2ffa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2700&q=100",
+      "https://images.unsplash.com/photo-1528858755052-cacfa0dd164a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2229&q=100",
   }
 ];
 
