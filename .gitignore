@@ -36,6 +36,7 @@ build/Release
 2.projects-presentation/node_modules/
 3.intersection-observer/node_modules/
 4.menu-interactivity/node_modules/
+google-stop-trigger/node_modules/
 
 jspm_packages/
 
@@ -67,6 +68,9 @@ typings/
 # gatsby files
 4.menu-interactivity/.cache/
 4.menu-interactivity/public
+
+google-stop-trigger/.cache/
+google-stop-trigger/public
 
 # Mac files
 .DS_Store
