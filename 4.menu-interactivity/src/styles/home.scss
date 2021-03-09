@@ -80,7 +80,6 @@ body {
   margin-top: 100vh;
   background-color: #003fff;
   position: relative;
-  // margin-top: 40vh;
   padding: 1vh 0;
 
   .menu-item {
@@ -91,7 +90,6 @@ body {
     font-size: 9rem;
     text-transform: uppercase;
     font-family: "Fugaz One", cursive;
-    // font-family: 'Anton', sans-serif;
     padding: 4vh 4vw;
     z-index: 1;
     &:not(.clone) {
