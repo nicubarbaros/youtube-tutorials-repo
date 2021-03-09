@@ -1,20 +1,15 @@
 const photos = [
-  "https://images.unsplash.com/photo-1500081334385-7766153ae227?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1234&q=100",
-  "https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1402&q=100",
-
-  "https://images.unsplash.com/photo-1449182210692-60ced46ae304?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2491&q=100",
-
-  "https://images.unsplash.com/photo-1537253500005-0945025bafe6?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2700&q=100",
-
-  "https://images.unsplash.com/photo-1504829857797-ddff29c27927?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2700&q=100",
+  "https://lh3.googleusercontent.com/e6W12HucjyEIRg_nLzpW489zhl65yttWZZlU6IvG5CJe3wURC9tmcBCoHh8TU3-L0MmjGysnXYIG-dgyLsPFPMrzJIq0V3GmeKq03w=s0",
+  "https://lh3.googleusercontent.com/WTVf7YDXhBKR_Mr48EPvuEjsU4zvSGsHl2yBp0S2EHv-a3LT6JqMvEdzxIqWOCV0lS0LuskC429JKYGvMWtohM36qpeeHCeWvhfv=s0",
+  
+  "https://lh3.googleusercontent.com/8-v56O_QtAGD8rHwrrzb1EFdxv3wauakHDxMfAO6Wd45EdAyOHEaGUw9S1RAOnld7juYQT43lY5bihOnKwiHe-E5UOBVxvNkCsk91w=s0",
+  "https://lh3.googleusercontent.com/Qq1Xlfwa7QS9MWZOHe4G8NHPzbre9uJr8wa1FUXafR52FnCTn6v0PqAt9oIhKzoQNC95ZumfqPsbA-56NPKqBfSLn734K7bafSY0zYE=s0",
 ];
-const imageData = [photos, photos, photos, photos];
 
-const points = [
-  [11, 2, 12, 2],
-  [18, 6, 7, 1],
-  [29, 5, 12, 3],
-  [16, 10, 13, 3],
-  [30, 14, 5, 2],
-];
-export { imageData, points };
+
+const videos = [
+  'https://kstatic.googleusercontent.com/files/dfb9f5574f912670aca64ab32d690302f592ddbb81f4333821403b5501321a9acf26f4b050139637fa2890bbdf88e79259e0ae9472e1394d4be47b54667f6e21',
+  'https://kstatic.googleusercontent.com/files/a22c40a5fbc5b4f9eb6fa77e232b4106546d67302244e5c03af4ffcd49a86473f1615f0ffdc8204e62576008050be336dfe0cbb70e754c70f06b4c7ecd4dd3ca'
+]
+
+export { photos, videos };
