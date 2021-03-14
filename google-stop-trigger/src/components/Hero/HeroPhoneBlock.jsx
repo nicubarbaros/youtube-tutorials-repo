@@ -15,31 +15,48 @@ export default function HeroPhoneBlock() {
     gsap.registerPlugin(ScrollTrigger);
   }, []);
   useEffect(() => {
-    console.log({ c: phoneRef.current });
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: phoneRef.current,
-        start: "top top",
-        end: "+=1000",
-        scrub: true,
-        pin: true,
-        // anticipatePin: 1,
-        markers: true,
-      },
-    });
-    // add animations and labels to the timeline
-    tl.addLabel("ere")
-      .to(phoneRef.current, { scale: 1.2 }, "+=0.2")
-      .addLabel("color");
-    tl.to(
-      ".hero-container",
-      {
-        // selector text, Array, or object
-        backgroundColor: "black", // camelCase
-        duration: 0.25, // seconds
-      },
-      "-=0.5"
-    );
+    function intro() {
+      console.log({ c: phoneRef.current });
+      const tl = gsap.timeline({});
+      tl.fromTo(phoneRef.current, { y: 200 }, { duration: 1, y: 0 });
+      return tl;
+    }
+    function stopTrigger() {
+      const tl = gsap.timeline({
+        delay:1,
+        scrollTrigger: {
+          trigger: phoneRef.current,
+          start: "top top",
+          end: "+=1000",
+          scrub: true,
+          pin: true,
+          // anticipatePin: 1,
+          // markers: true,
+        },
+      });
+
+      // add animations and labels to the timeline
+      tl.to(phoneRef.current, { scale: 1.2 }, "+=0.2");
+      tl.to(
+        ".hero-container",
+        {
+          // selector text, Array, or object
+          backgroundColor: "black", // camelCase
+          duration: 0.25, // seconds
+        },
+        "-=0.5"
+      );
+
+      return tl;
+    }
+    const master = gsap.timeline();
+    master.add(intro()); //with a gap of 2 seconds
+
+    
+    // could not make it with delay from gsap
+    setTimeout(()=>{
+      master.add(stopTrigger())
+    }, 1000)
   }, []);
 
   return (

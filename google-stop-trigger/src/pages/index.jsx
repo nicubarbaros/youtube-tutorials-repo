@@ -2,7 +2,7 @@ import React from "react";
 import Loadable from "react-loadable";
 import "../styles/home.scss";
 
-const loader = () => <div>Loading.</div>;
+const loader = () => <div></div>;
 //
 const HomeLazy = Loadable({
   loader: () => import("../containers/Main"),

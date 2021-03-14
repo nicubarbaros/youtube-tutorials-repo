@@ -27,3 +27,20 @@ const photos = [
 ];
 
 export { photos };
+
+{/* <span>☟</span> */}
+{/* <iframe
+title={"src"}
+className={`resp-iframe `}
+src={
+  "https://player.vimeo.com/video/91284753?autoplay=1&loop=1&autopause=0&muted=1"
+}
+width="640"
+height="360"
+frameborder="0"
+webkitallowfullscreen
+mozallowfullscreen
+allowfullscreen
+allow="autoplay; fullscreen"
+controls="0"
+></iframe> */}

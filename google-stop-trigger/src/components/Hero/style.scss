@@ -1,20 +1,22 @@
 .hero-container {
-  padding-bottom: 2000px;
   .hero-text-section{
     max-width: 10.5em;
     width: calc(100% - 32px);
     margin: 0 auto;
     padding-bottom: 300px;
-    padding-top: 500px;
+    padding-top: 300px;
     text-align: center;
     font-size: 70px;
+    h1 {
+      display: inline-block;
+    }
   }
   .hero-collage {
     display: grid;
     grid-template-columns: 35% 1fr 35%;
     max-width: 95%;
     margin: 0 auto;
-    padding-top: 100px;
+    // padding-top: 100px;
     margin-bottom: 10vh;
 
     .left-column {
@@ -101,10 +103,9 @@
   .hero-usedBy {
     display: flex;
     justify-content: space-between;
-    // margin-bottom: 316px;
     margin-top: 234px;
     padding-top: 234px;
-
+    margin-bottom: 300px;
     margin-left: auto;
     margin-right: auto;
     max-width: 1304px;
