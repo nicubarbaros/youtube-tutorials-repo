@@ -36,7 +36,7 @@ build/Release
 2.projects-presentation/node_modules/
 3.intersection-observer/node_modules/
 4.menu-interactivity/node_modules/
-google-stop-trigger/node_modules/
+5.google-stop-trigger/node_modules/
 
 jspm_packages/
 
@@ -69,8 +69,8 @@ typings/
 4.menu-interactivity/.cache/
 4.menu-interactivity/public
 
-google-stop-trigger/.cache/
-google-stop-trigger/public
+5.google-stop-trigger/.cache/
+5.google-stop-trigger/public
 
 # Mac files
 .DS_Store
