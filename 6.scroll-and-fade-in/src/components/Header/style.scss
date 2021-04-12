@@ -1,0 +1,20 @@
+.header-container{
+
+  position: relative;
+  margin-top: 100px;
+
+  .header-menu{
+    position: absolute;
+    left: 0;
+    top: 0;
+    li {
+      text-transform: uppercase;
+      margin: 10px 0;
+    }
+  }
+  h1 {
+    font-size: 20vw;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}

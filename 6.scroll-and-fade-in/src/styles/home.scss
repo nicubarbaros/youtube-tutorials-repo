@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:300;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+$bg-color: #f5f0ec;
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Ubuntu, "Helvetica Neue", sans-serif;
+
+  cursor: none;
+    background-color: $bg-color;
+}
+
+.main-container{
+  padding: 0 5vw;
+}

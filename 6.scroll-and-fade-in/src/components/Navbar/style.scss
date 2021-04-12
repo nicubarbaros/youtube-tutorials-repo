@@ -1,0 +1,12 @@
+.navbar {
+ position: sticky; 
+ display: flex;
+ justify-content: space-between;
+ text-transform: uppercase;
+
+ padding:  50px 5vw;
+ font-size: 24px;
+ font-weight: bold;
+
+ mix-blend-mode: difference;
+}
