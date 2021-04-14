@@ -1,12 +1,17 @@
 .navbar {
- position: sticky; 
- display: flex;
- justify-content: space-between;
- text-transform: uppercase;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
 
- padding:  50px 5vw;
- font-size: 24px;
- font-weight: bold;
+  padding: 50px 5vw;
+  font-size: 24px;
 
- mix-blend-mode: difference;
+  //  mix-blend-mode: difference;
+
+  letter-spacing: 1px;
+  font-family: "Syncopate", sans-serif;
+  color: #464646;
+  font-weight: 600;
+  text-transform: uppercase;
 }

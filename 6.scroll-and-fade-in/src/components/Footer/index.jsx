@@ -1,106 +1,13 @@
 import React from "react";
+import SectionHeader from "../SectionHeader";
 import "./style.scss";
 
 export default function Footer() {
   return (
-    <div
-      className="footer"
-      data-scroll
-    >
-   footer
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-   <div>afeaf</div> 
-    </div>
+    <section className="footer" data-scroll>
+      <SectionHeader title="Made in" />
+
+      <h1 className='location'>Rio de Janeiro</h1>
+    </section>
   );
 }
