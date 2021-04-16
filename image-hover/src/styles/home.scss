@@ -7,7 +7,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap");
 
-$bg-color: #f5f0ec;
+$bg-color: #171717;
 
 body {
   font-family: "Poppins", sans-serif;
@@ -17,28 +17,6 @@ body {
 }
 
 .main-container {
-  padding: 0 5vw;
-  clip-path: inset(100% 0% 0% 0%);
-  backface-visibility: hidden;
+  padding: 200px 5vw;
 }
 
-section {
-  padding: 100px 0;
-
-  &:first-of-type {
-    padding-top: 0;
-  }
-
-  .section-header {
-    margin-bottom: 50px;
-  }
-}
-.absolute {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: black;
-  z-index: 1;
-}

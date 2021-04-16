@@ -2,5 +2,14 @@
   p {
     font-size: 70px;
     line-height: 1.12;
+    opacity: 0;
+
+    > div {
+      opacity: 0;
+      transform: translateY(0px);
+    }
+    &.is-reveal {
+      opacity: 1;
+    }
   }
 }

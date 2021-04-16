@@ -17,29 +17,34 @@ import Gallery from "../components/Gallery";
 const Home = () => {
   const ref = useRef(null);
 
-  // useEffect(() => {
-  //   if (ref) {
-  //     if (typeof window === "undefined" || !window.document) {
-  //       return;
-  //     }
-  //     const scroll = new LocomotiveScroll({
-  //       el: ref.current,
-  //       smooth: true,
-  //       // direction: "horizontal",
-  //       multiplier: 0.5,
-  //     });
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (ref) {
+      if (typeof window === "undefined" || !window.document) {
+        return;
+      }
+      const scroll = new LocomotiveScroll({
+        el: ref.current,
+        smooth: true,
+        // direction: "horizontal",
+        multiplier: 0.5,
+        class: "reveal",
+      });
+      setTimeout(() => {
+        console.log("updated");
+        scroll.update();
+      }, 3000);
+    }
+  }, []);
 
   if (typeof window === "undefined" || !window.document) {
     return null;
   }
   return (
     <>
+      <div className="absolute"></div>
       <CustomCursor />
-      <div className="top"></div>
-      <Navbar />
       <div className="main-container" data-scroll-container ref={ref}>
+        <Navbar />
         <Header />
         <Featured />
         <About />
