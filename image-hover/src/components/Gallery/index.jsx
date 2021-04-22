@@ -1,9 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import cn from "classnames";
-import { useContext } from "react";
-import { CursorContext } from "../../CustomCursor/CursorManager";
 
 import "./style.scss";
+import { CursorContext } from "../../CustomCursor/CursorManager";
 
 const images = [
   "https://images.unsplash.com/photo-1576174464184-fb78fe882bfd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=100",
@@ -14,6 +13,7 @@ const images = [
 function GalleryItem({ src }) {
   const ref = useRef(null);
   const mouseContext = useContext(CursorContext);
+
   const [clipMaskRadius, setClipMaskRadius] = useState(0);
   const [clipMask, setClipMask] = useState({ x: 0, y: 0 });
   const [reveal, setReveal] = useState(false);
@@ -25,44 +25,18 @@ function GalleryItem({ src }) {
   }, []);
 
   useEffect(() => {
-    function setIntervalUp(callback, delay, repetitions) {
-      let value = 0;
-      var intervalID = window.setInterval(function() {
-        callback(value);
-
-        if (++value === repetitions) {
-          window.clearInterval(intervalID);
-        }
-      }, delay);
-    }
-    function setIntervalDown(callback, delay, repetitions) {
-      let value = repetitions;
-      var intervalID = window.setInterval(function() {
-        callback(value);
-
-        if (--value === 0) {
-          window.clearInterval(intervalID);
-        }
-      }, delay);
-    }
-    ref.current.addEventListener("mouseenter", () => {
-      setIntervalUp(setClipMaskRadius, 10, 25);
-    });
-    ref.current.addEventListener("mouseleave", () => {
-      setIntervalDown(setClipMaskRadius, 10, 25);
-    });
-
     function getCoordinates(mouse) {
-      var ImgPos = {
+      const imagePosition = {
         posX: ref.current.offsetLeft,
         posY: ref.current.offsetTop,
       };
 
-      const PosX = mouse.pageX - ImgPos.posX;
-      const PosY = mouse.pageY - ImgPos.posY;
+      const posX = mouse.pageX - imagePosition.posX;
+      const posY = mouse.pageY - imagePosition.posY;
+
       setClipMask({
-        x: (PosX / ref.current.clientWidth) * 100,
-        y: (PosY / ref.current.clientHeight) * 100,
+        x: (posX / ref.current.clientWidth) * 100,
+        y: (posY / ref.current.clientHeight) * 100,
       });
     }
 
@@ -76,14 +50,21 @@ function GalleryItem({ src }) {
     <div
       className={cn("gallery-item-wrapper", { "is-reveal": reveal })}
       ref={ref}
-      onMouseEnter={() => mouseContext.setSize("hide")}
-      onMouseLeave={() => mouseContext.setSize("small")}
+      onMouseEnter={() => {
+        setClipMaskRadius(25);
+        mouseContext.setSize("hide");
+      }}
+      onMouseLeave={() => {
+        setClipMaskRadius(0);
+        mouseContext.setSize("small");
+      }}
     >
-      <div className={"gallery-item"}>
+      <div className="gallery-item">
         <div
           className="gallery-item-image sepia"
           style={{ backgroundImage: `url(${src})` }}
         ></div>
+
         <div
           className="gallery-item-image masked"
           style={{
@@ -95,7 +76,6 @@ function GalleryItem({ src }) {
     </div>
   );
 }
-
 export default function Gallery() {
   return (
     <div className="gallery">

@@ -5,7 +5,7 @@ import { useRef } from "react";
 import "../styles/home.scss";
 import CustomCursor from "../CustomCursor";
 import Gallery from "../components/Gallery";
-import CursorManager from '../CustomCursor/CursorManager';
+import CursorManager from "../CustomCursor/CursorManager";
 const Home = () => {
   const ref = useRef(null);
 
@@ -15,7 +15,6 @@ const Home = () => {
   return (
     <>
       <CursorManager>
-        <div className="absolute"></div>
         <CustomCursor />
         <div className="main-container" ref={ref}>
           <Gallery />
