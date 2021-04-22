@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
+import { CursorContext } from "./CursorManager";
 import "./style.scss";
-// import CustomCursorContext from "./context/CustomCursorContext";
 
 // TODO: Hide if cursor not moved
 const CustomCursor = () => {
-  // const { type } = useContext(CustomCursorContext);
+  const { size } = useContext(CursorContext);
   const secondaryCursor = React.useRef(null);
   const positionRef = React.useRef({
     mouseX: 0,
@@ -27,7 +27,6 @@ const CustomCursor = () => {
         mouseX - secondaryCursor.current.clientWidth / 2;
       positionRef.current.mouseY =
         mouseY - secondaryCursor.current.clientHeight / 2;
-     
     });
 
     return () => {};
@@ -67,10 +66,8 @@ const CustomCursor = () => {
     followMouse();
   }, []);
   return (
-    <div className={`cursor-wrapper default`}>
-      <div className="secondary-cursor" ref={secondaryCursor}>
-      </div>
-      
+    <div className="cursor-wrapper">
+      <div className={`secondary-cursor ${size}`} ref={secondaryCursor}></div>
     </div>
   );
 };

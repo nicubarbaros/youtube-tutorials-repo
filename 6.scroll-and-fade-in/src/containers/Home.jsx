@@ -41,7 +41,6 @@ const Home = () => {
   }
   return (
     <>
-      <div className="absolute"></div>
       <CustomCursor />
       <div className="main-container" data-scroll-container ref={ref}>
         <Navbar />

@@ -17,6 +17,10 @@ body {
 }
 
 .main-container {
-  padding: 200px 5vw;
+  height: 100vh;
+  width: 90vw;
+  margin: 0 auto;
+  align-items: center;
+  display: grid;
 }
 
