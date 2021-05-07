@@ -2,10 +2,10 @@
 // @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap");
 // @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@100;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap");
 
-@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@100;700&display=swap");
 
 $bg-color: #f5f0ec;
 
@@ -23,12 +23,9 @@ body {
 }
 
 section {
-  padding: 100px 0;
-
-  &:first-of-type {
-    padding-top: 0;
+  &:not(:last-of-type) {
+    padding: 100px 0;
   }
-
   .section-header {
     margin-bottom: 50px;
   }
@@ -41,4 +38,28 @@ section {
   right: 0;
   background-color: black;
   z-index: 1;
+}
+
+.loader-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: "all 0.25s ease-in-out";
+  background-color: #191919;
+  color: #dbd8d6;
+  h1 {
+    font-size: 1.5vw;
+    text-transform: uppercase;
+    font-family: "Bai Jamjuree", sans-serif;
+    font-weight: 600;
+  }
+  h2 {
+    font-size: 1.5vw;
+
+    text-transform: uppercase;
+    font-family: "Bodoni Moda", serif;
+    font-style: italic;
+    margin-top: 10px;
+  }
 }

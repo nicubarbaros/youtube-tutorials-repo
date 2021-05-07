@@ -1,19 +1,26 @@
 .gallery {
-  height: 600px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  height: 80vh;
+  // display: grid;
+  // grid-template-columns: repeat(3, 1fr);
   column-gap: 100px;
-
+  padding: 10vh 0;
+  width: 400%;
+  display: flex;
+  flex-wrap: nowrap;
+  
   .gallery-item {
     width: 100%;
     height: 100%;
     overflow: hidden;
     position: relative;
     will-change: transform;
-    clip-path: inset(100% 0% 0% 0%);
+    clip-path: inset(0% 100% 0% 0%);
     transition: clip-path 1s cubic-bezier(0.77, 0, 0.175, 1);
   }
   .gallery-item-wrapper {
+    min-width: 33vw;
+    height: 100%;
+
     &.is-reveal {
       @for $i from 1 through 3 {
         &:nth-child(#{$i}n) {

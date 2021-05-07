@@ -1,7 +1,6 @@
 .header-container{
 
   position: relative;
-  margin-top: 100px;
 
   .header-menu{
     position: absolute;
@@ -32,4 +31,7 @@
 }
 .lineParent{
   overflow: hidden;
+  .lineChildren{
+    transform: translate(0, 500px);
+  }
 }
