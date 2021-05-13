@@ -1,39 +1,122 @@
+.gallery-wrap {
+  background-color: #d53f41;
+  margin-left: -5vw;
+  margin-right: -5vw;
+}
+
+.gallery-counter {
+  position: absolute;
+  top: 10%;
+  left: 100px;
+  z-index: 1;
+  mix-blend-mode: difference;
+  line-height: 16px;
+  color: #dbd8d6;
+
+  font-family: "Bai Jamjuree";
+  font-weight: 600;
+
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+
+  .divider {
+    content: "";
+    background-color: white;
+    width: 6.25vw;
+    margin: 7px 10px;
+    height: 1px;
+    display: inline-block;
+  }
+}
+
 .gallery {
+  // background-color: black;
+
   height: 80vh;
+  // margin-left: 50vw;
+  // margin-right: 50vw;
   // display: grid;
   // grid-template-columns: repeat(3, 1fr);
-  column-gap: 100px;
+  // column-gap: 40vw;
   padding: 10vh 0;
   width: 400%;
   display: flex;
   flex-wrap: nowrap;
-  
+
   .gallery-item {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    // overflow: hidden;
     position: relative;
     will-change: transform;
-    clip-path: inset(0% 100% 0% 0%);
-    transition: clip-path 1s cubic-bezier(0.77, 0, 0.175, 1);
+    // clip-path: inset(0% 100% 0% 0%);
+    // transition: clip-path 1s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  .gallery-item-info {
+    position: absolute;
+    bottom: 10%;
+    z-index: 1;
+    transform: translateX(-20%);
+    // left: -50%;
+    color: #dbd8d6;
+    color: white;
+    .gallery-info-title {
+      line-height: 6vw;
+      font-family: "Bai Jamjuree";
+      font-weight: 600;
+
+      font-size: 6vw;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .gallery-info-subtitle {
+      position: relative;
+      line-height: 6vw;
+      color: transparent;
+      font-family: "Bodoni Moda";
+      font-weight: 400;
+      font-size: 6vw;
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-stroke: 2px #dbd8d6;
+    }
+
+    .gallery-info-category {
+      position: relative;
+      line-height: 24px;
+      font-family: "Bai Jamjuree";
+      font-weight: 400;
+      font-size: 24px;
+      -webkit-font-smoothing: antialiased;
+      margin-top: 2vh;
+    }
   }
   .gallery-item-wrapper {
-    min-width: 33vw;
+    // width: 75vw;
+    aspect-ratio: 16/9;
     height: 100%;
-
+    // padding: 0 20vw;
+    display: grid;
+    // grid-template-columns: 300px 75vw 300px;
+    grid-template-columns: 20vw 1fr 200px;
+    width: 100vw;
+    // &:before,
+    // &:after {
+    //   content: '';
+    //   width: 400px;
+    // }
+    // &:first-of-type {
+    //   padding-left: 40vw;
+    // }
+    // &:last-of-type {
+    //   // padding-right: 40vw;
+    //   // margin-right: 50vw;
+    // }
     &.is-reveal {
-      @for $i from 1 through 3 {
-        &:nth-child(#{$i}n) {
-          .gallery-item {
-            transition-delay: #{$i * 0.1}s !important;
-          }
-        }
-      }
-      .gallery-item {
-        clip-path: inset(0% 0% 0% 0%);
-      }
       .gallery-item-image {
         transform: scale(1);
+        filter: none;
       }
     }
   }
@@ -44,7 +127,8 @@
     width: 100%;
     height: 100%;
     will-change: transform;
-    transform: scale(1.1);
-    transition: transform 2s cubic-bezier(0.77, 0, 0.175, 1);
+    transform: scale(0.7);
+    transition: all 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+    filter: grayscale(100%) sepia(20%) brightness(80%);
   }
 }

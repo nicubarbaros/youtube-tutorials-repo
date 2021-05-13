@@ -27,7 +27,6 @@ const CustomCursor = () => {
         mouseX - secondaryCursor.current.clientWidth / 2;
       positionRef.current.mouseY =
         mouseY - secondaryCursor.current.clientHeight / 2;
-     
     });
 
     return () => {};
@@ -62,15 +61,14 @@ const CustomCursor = () => {
           positionRef.current.destinationY += distanceY;
         }
       }
-      secondaryCursor.current.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`;
+      if (secondaryCursor && secondaryCursor.current)
+        secondaryCursor.current.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`;
     };
     followMouse();
   }, []);
   return (
     <div className={`cursor-wrapper default`}>
-      <div className="secondary-cursor" ref={secondaryCursor}>
-      </div>
-      
+      <div className="secondary-cursor" ref={secondaryCursor}></div>
     </div>
   );
 };

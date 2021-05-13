@@ -23,9 +23,7 @@ body {
 }
 
 section {
-  &:not(:last-of-type) {
-    padding: 100px 0;
-  }
+  padding: 100px 0;
   .section-header {
     margin-bottom: 50px;
   }
