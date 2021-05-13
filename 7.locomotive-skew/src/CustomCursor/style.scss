@@ -1,0 +1,128 @@
+.secondary-cursor {
+  z-index: 1000;
+  border-radius: 50%;
+  pointer-events: none;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  position: fixed;
+  background: white;
+  // border: 1px solid black;
+  mix-blend-mode: difference;
+  transition: width 0.25s ease-in-out, height 0.25s ease-in-out;
+
+  &.regular {
+    width: 40px;
+    height: 40px;
+  }
+  &.small {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+
+.secondary-cursor {
+  z-index: 10000;
+
+  pointer-events: none;
+  // overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  position: fixed;
+}
+
+
+.secondary-cursor {
+  width: 30px;
+  height: 30px;
+
+}
+
+.slider-drag {
+
+
+ 
+}
+
+.hamburger {
+  
+
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes bgUp {
+  from {
+    background-color: transparent;
+  }
+
+  to {
+    background-color: black;
+  }
+}
+
+@keyframes bgDown {
+  from {
+    background-color: black;
+  }
+
+  to {
+    background-color: transparent;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes scaleDown {
+  from {
+    transform: scale(1.5);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes translateLeftDot {
+  from {
+    transform: translate(20px, -50%);
+  }
+
+  to {
+    transform: translate(0px, -50%);
+  }
+}
+
+@keyframes translateRightDot {
+  from {
+    transform: translate(-20px, -50%);
+  }
+
+  to {
+    transform: translate(0px, -50%);
+  }
+}
