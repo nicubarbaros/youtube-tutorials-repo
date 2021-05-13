@@ -16,13 +16,11 @@ body {
   background-color: $bg-color;
 }
 
-.main-container{
-  padding-top: 80vh;
-}
+
 .grid-wrap {
   display: grid;
-  grid-template-columns: repeat(2, 33%);
-  gap: 20%;
+  grid-template-columns: repeat(3, 20%);
+  gap: 5%;
   // width: 1400px;
   justify-content: center;
   margin: 0 auto;

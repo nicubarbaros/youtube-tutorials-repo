@@ -28,6 +28,7 @@ const Home = () => {
   const ref = useRef(null);
   const leftColumnRef = useRef(null);
   const rightColumnRef = useRef(null);
+  const middleColumnRef = useRef(null);
   const scroll = useRef({
     cache: 0,
     current: 0,
@@ -46,7 +47,6 @@ const Home = () => {
       getSpeed: true,
       // lerp: 0.5
     });
-    const allImages = [...document.querySelectorAll(".grid-item-r")];
     scrollElement.on("scroll", (obj) => {
       // Find distance between scroll updates
       scroll.current.current = obj.scroll.y;
@@ -59,13 +59,15 @@ const Home = () => {
         10
       )}deg)`;
       rightColumnRef.current.style.transform = `skewY(${clamp(
+        distance,
+        -10,
+        10
+      )}deg)`;
+      middleColumnRef.current.style.transform = `skewY(${clamp(
         -distance,
         -10,
         10
       )}deg)`;
-      allImages.forEach((el) => {
-        el.style.transform = `skewY(${clamp(distance, -10, 10)}deg)`;
-      });
     });
 
     // Preload images
@@ -75,8 +77,9 @@ const Home = () => {
   }, []);
 
   const leftChunk = [...photos].splice(0, 5);
-  const rightChunk = [...photos].splice(5, photos.length);
-
+  const middleChunk = [...photos].splice(5, 5);
+  const rightChunk = [...photos].splice(10, 5);
+console.log(photos.splice(5, 10))
   return (
     <>
       <CustomCursor />
@@ -97,6 +100,18 @@ const Home = () => {
                 index={index}
               />
             ))}
+          </div>
+          <div className="middle-column" data-scroll data-scroll-speed="-20">
+            <div ref={middleColumnRef}>
+              {middleChunk.map(({ url, description }, index) => (
+                <GridItem
+                  key={url}
+                  url={url}
+                  description={description}
+                  index={index}
+                />
+              ))}
+            </div>
           </div>
           <div className="right-column" ref={rightColumnRef}>
             {rightChunk.map(({ url, description }, index) => (
