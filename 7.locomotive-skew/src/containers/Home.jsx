@@ -41,6 +41,9 @@ const Home = () => {
     const scrollElement = new LocomotiveScroll({
       el: ref.current,
       smooth: true,
+      smartphone: {
+        smooth: true,
+      },
       // direction: "horizontal",
       // multiplier: 0.5,
       getDirection: true,
@@ -79,7 +82,7 @@ const Home = () => {
   const leftChunk = [...photos].splice(0, 5);
   const middleChunk = [...photos].splice(5, 5);
   const rightChunk = [...photos].splice(10, 5);
-console.log(photos.splice(5, 10))
+  console.log(photos.splice(5, 10));
   return (
     <>
       <CustomCursor />
