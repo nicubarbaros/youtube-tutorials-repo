@@ -2,11 +2,12 @@ import React, { useEffect, useRef, useState } from "react";
 import cn from "classnames";
 
 import SectionHeader from "../SectionHeader";
-import "./style.scss";
 
 import gsap from "gsap";
-import SplitText from "./Split3.min";
+import SplitText from "../../utils/Split3.min";
 import useOnScreen from "../../hooks/useOnScreen";
+
+import "./style.scss";
 
 export default function About() {
   const ref = useRef(null);

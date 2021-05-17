@@ -5,7 +5,6 @@ import photos from "../data";
 import LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/src/locomotive-scroll.scss";
 
-import "../styles/home.scss";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CustomCursor from "../CustomCursor";
@@ -13,9 +12,9 @@ import Header from "../components/Header";
 import Featured from "../components/Featured";
 import About from "../components/About";
 import Gallery from "../components/Gallery";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { gsap } from "gsap";
 import useLocoScroll from "./useLocoScroll";
+
+import "../styles/home.scss";
 
 const Home = () => {
   const ref = useRef(null);
