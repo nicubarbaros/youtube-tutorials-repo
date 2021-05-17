@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useRef } from "react";
-import "locomotive-scroll/src/locomotive-scroll.scss";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -10,7 +9,7 @@ import Header from "../components/Header";
 import Featured from "../components/Featured";
 import About from "../components/About";
 import Gallery from "../components/Gallery";
-import useLocoScroll from "./useLocoScroll";
+import useLocoScroll from "../hooks/useLocoScroll";
 
 import "../styles/home.scss";
 
@@ -18,7 +17,7 @@ const Home = () => {
   const ref = useRef(null);
   const [preloader, setPreload] = useState(true);
 
-  
+
   useLocoScroll(!preloader);
 
   useEffect(() => {
