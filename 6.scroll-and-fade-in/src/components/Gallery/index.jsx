@@ -1,18 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import SectionHeader from "../SectionHeader";
-import LocomotiveScroll from "locomotive-scroll";
-import "locomotive-scroll/src/locomotive-scroll.scss";
-import "./style.scss";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import useOnScreen from "../../hooks/useOnScreen";
 import cn from "classnames";
 
-// const images = [
-//   "https://images.unsplash.com/photo-1566204773863-cf63e6d4ab88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1345&q=100",
-//   "https://images.unsplash.com/photo-1558603668-6570496b66f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1300&q=100",
-//   "https://images.unsplash.com/photo-1567225557594-88d73e55f2cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=934&q=100",
-// ];
+import "./style.scss";
 
 const images = [
   {
@@ -54,16 +46,10 @@ function GalleryItem({
 }) {
   const ref = useRef(null);
 
-  const [reveal, setReveal] = useState(false);
   const onScreen = useOnScreen(ref, 0.5);
-
-  // useEffect(() => {
-  //   if (onScreen) setReveal(onScreen);
-  // }, [onScreen]);
-
+  
   useEffect(() => {
     if (onScreen) {
-      console.log(index);
       updateActiveImage(index);
     }
   }, [onScreen, index]);
@@ -102,7 +88,7 @@ export default function Gallery({ src, index, columnOffset }) {
       console.log(ref.current.clientWidth);
       console.log({ current: ref.current });
       let sections = gsap.utils.toArray(".gallery-item-wrapper");
-      console.log(sections);
+
       gsap.to(sections, {
         xPercent: -100 * (sections.length - 1),
         ease: "none",
@@ -114,7 +100,6 @@ export default function Gallery({ src, index, columnOffset }) {
           scrub: 0.5,
           snap: 1 / (sections.length - 1),
           end: () => `+=${ref.current.offsetWidth}`,
-          // markers: true,
         },
       });
       ScrollTrigger.refresh();
@@ -127,7 +112,6 @@ export default function Gallery({ src, index, columnOffset }) {
 
   return (
     <section data-scroll-section className="section-wrapper gallery-wrap">
-      {/* <SectionHeader title="gallery" /> */}
 
       <div className="gallery" ref={ref}>
         <div className="gallery-counter">

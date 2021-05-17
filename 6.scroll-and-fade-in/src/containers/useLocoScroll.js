@@ -12,12 +12,10 @@ export default function useLocoScroll(start) {
 
     const scrollEl = document.querySelector("#main-container");
 
-    console.log(scrollEl);
     locoScroll = new LocomotiveScroll({
       el: scrollEl,
       smooth: true,
       multiplier: 1,
-      // direction: "horizontal",
       class: "is-reveal",
     });
 
@@ -36,7 +34,6 @@ export default function useLocoScroll(start) {
       },
       scrollLeft(value) {
         if (locoScroll) {
-          console.log(locoScroll.scroll.instance.scroll.y);
           return arguments.length
             ? locoScroll.scrollTo(value, 0, 0)
             : locoScroll.scroll.instance.scroll.x;

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useRef } from "react";
-import photos from "../data";
-import LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/src/locomotive-scroll.scss";
 
 import Navbar from "../components/Navbar";
@@ -19,6 +17,8 @@ import "../styles/home.scss";
 const Home = () => {
   const ref = useRef(null);
   const [preloader, setPreload] = useState(true);
+
+  
   useLocoScroll(!preloader);
 
   useEffect(() => {
@@ -30,12 +30,14 @@ const Home = () => {
   }, [preloader]);
 
   const [timer, setTimer] = React.useState(3);
+
   const id = React.useRef(null);
 
   const clear = () => {
     window.clearInterval(id.current);
     setPreload(false);
   };
+
   React.useEffect(() => {
     id.current = window.setInterval(() => {
       setTimer((time) => time - 1);
@@ -48,9 +50,7 @@ const Home = () => {
       clear();
     }
   }, [timer]);
-  useEffect(() => {
-    // gsap.registerPlugin(ScrollTrigger);
-  }, []);
+
   if (typeof window === "undefined" || !window.document) {
     return null;
   }
@@ -59,19 +59,17 @@ const Home = () => {
     <>
       <CustomCursor />
       {preloader ? (
-        <div
-          className="loader-wrapper absolute"
-          style={
-            {
-              // backgroundColor: color,
-            }
-          }
-        >
+        <div className="loader-wrapper absolute">
           <h1>Flirty flowers</h1>
           <h2>Rio de Janeiro</h2>
         </div>
       ) : (
-        <div className="main-container" id='main-container' data-scroll-container ref={ref}>
+        <div
+          className="main-container"
+          id="main-container"
+          data-scroll-container
+          ref={ref}
+        >
           <Navbar />
           <Header />
           <Featured />
