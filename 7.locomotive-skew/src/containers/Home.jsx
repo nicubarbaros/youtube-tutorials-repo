@@ -6,7 +6,6 @@ import LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/src/locomotive-scroll.scss";
 import GridItem from "../components/GridItem";
 
-import CustomCursor from "../CustomCursor";
 import imagesLoaded from "imagesloaded";
 
 import "../styles/home.scss";
@@ -85,7 +84,6 @@ const Home = () => {
   console.log(photos.splice(5, 10));
   return (
     <>
-      <CustomCursor />
 
       <div
         className="main-container"
