@@ -39,6 +39,7 @@ build/Release
 5.google-stop-trigger/node_modules/
 6.scroll-and-fade-in/node_modules/
 7.locomotive-skew/node_modules/
+8.work-page-effect/node_modules/
 image-hover/node_modules/
 
 jspm_packages/
@@ -80,6 +81,9 @@ typings/
 
 7.locomotive-skew/.cache/
 7.locomotive-skew/public
+
+8.work-page-effect/.cache/
+8.work-page-effect/public
 
 image-hover/.cache/
 image-hover/public
