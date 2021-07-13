@@ -6,7 +6,7 @@
   display: flex;
   width: 100%;
   justify-content: center;
-  padding: 30px 5vw;
+  padding: 100px 5vw;
   box-sizing: border-box;
 
   font-size: 2em;
@@ -24,6 +24,8 @@
   }
 
   @include mq("tablet", max) {
+  padding: 30px 5vw;
+
     justify-content: space-between;
     font-size: 1.4em;
 
