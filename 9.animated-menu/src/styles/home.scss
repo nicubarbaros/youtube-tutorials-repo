@@ -1,8 +1,30 @@
-@import url("https://fonts.googleapis.com/css2?family=Bentham&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 $bg-color: white;
 
 body {
-  font-family: "Bentham", sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: $bg-color;
+}
+
+.main-container {
+  position: relative;
+  width: calc(100vw - 126px); //margin, padding and border
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  margin-left: 75px;
+  padding-left: 50px;
+  border-left: 1px solid rgb(116, 116, 116);
+
+  h1 {
+    font-size: clamp(100px, 15vw, 15vw);
+    font-weight: bold;
+    margin-bottom: 10vh;
+    max-width: 70vw;
+    text-transform: uppercase;
+    font-family: 'Anton', sans-serif;
+    color: #111;
+  }
 }
