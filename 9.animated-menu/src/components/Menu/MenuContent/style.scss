@@ -1,3 +1,5 @@
+@import "../../../styles/_mixins.scss";
+
 .menu-holder {
   .menu-inside {
     position: fixed;
@@ -63,7 +65,7 @@
         margin-bottom: 20px;
 
         a {
-          font-size: 52px;
+          font-size: clamp(32px, 4vw, 52px);
           line-height: 1.1em;
           transform: translate(-100%);
           will-change: transform;
@@ -115,6 +117,19 @@
         }
         &:last-of-type {
           margin-right: 0px;
+        }
+      }
+    }
+  }
+
+  @include mq("tablet", max) {
+    .menu-inside {
+      .menu-nav-container {
+        left: 10%;
+        width: 100vw;
+
+        img {
+          display: none !important;
         }
       }
     }
