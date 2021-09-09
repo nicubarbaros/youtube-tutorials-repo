@@ -25,12 +25,86 @@
   }
 }
 
-.overlay-burger {
+.overlay-burger-menu {
   position: fixed;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  clip-path: inset(0% 0 100% 0);
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding-left: 30vw;
+  padding-top: 30vh;
+  transition: clip-path 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  h1 {
+    font: {
+      size: 10vw;
+      family: "Space Grotesk", sans-serif;
+    }
+
+    margin: 20px 0;
+  }
+
+  .burger-menu-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+  &.as-opened {
+    clip-path: inset(0% 0 0% 0);
+  }
+}
+
+.overlay-burger-icon {
+  left: 50px;
+  top: 50px;
+  position: fixed;
+  z-index: 3;
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  border: none;
+  background: 0 0;
+  will-change: transform;
+  transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  &:after,
+  &:before {
+    content: "";
+    width: 48px;
+    height: 2px;
+    position: absolute;
+    background-color: #111;
+    left: 50%;
+    top: 50%;
+    display: block;
+    will-change: transform;
+    transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  &:before {
+    transform: translate(-50%, -5px) scaleY(0.7) rotate(180deg);
+  }
+
+  &:after {
+    transform: translate(-50%, 5px) scaleY(0.7) rotate(0);
+  }
+
+  &.as-opened {
+    &:after {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    &:before {
+      transform: translate(-50%, -50%) rotate(315deg);
+    }
+  }
 }
 
 @include mq("tablet", min) {
-  .overlay-burger {
+  .overlay-burger-icon,
+  .overlay-burger-menu {
     display: none;
   }
   .overlay-nav {

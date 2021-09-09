@@ -12,7 +12,7 @@
     position: fixed;
     left: 45vw;
     width: auto;
-    height: 20vw;
+    height: clamp(200px, 20vw, 20vw);
     object-fit: cover;
     top: 30vh;
     pointer-events: none;
@@ -75,6 +75,9 @@
   }
   @include mq("tablet", max) {
     padding: 25px 0;
+    .info-block {
+      display: none;
+    }
   }
 }
 
