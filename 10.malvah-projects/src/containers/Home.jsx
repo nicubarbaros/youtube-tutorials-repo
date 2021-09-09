@@ -53,19 +53,11 @@ export default function Home() {
 
   useEffect(() => {
     const clonesHeight = cloneItems();
-    console.log(clonesHeight);
     initScroll();
     menuItems.current.style.scrollBehavior = "unset";
 
     const scrollUpdate = () => {
       const scrollPos = getScrollPos();
-      console.log(scrollPos);
-      console.log(
-        clonesHeight + scrollPos,
-        menuItems.current.scrollHeight,
-        clonesHeight + scrollPos >= menuItems.current.scrollHeight
-      );
-      console.log({ c: menuItems.current });
 
       if (clonesHeight + scrollPos >= menuItems.current.scrollHeight) {
         // menuItems.current.style.scrollBehavior = "unset";
