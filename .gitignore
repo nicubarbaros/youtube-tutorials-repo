@@ -41,6 +41,7 @@ build/Release
 7.locomotive-skew/node_modules/
 8.work-page-effect/node_modules/
 9.animated-menu/node_modules/
+10.malvah-projects/node_modules/
 image-hover/node_modules/
 
 jspm_packages/
@@ -87,6 +88,8 @@ typings/
 8.work-page-effect/public
 9.animated-menu/.cache/
 9.animated-menu/public
+10.malvah-projects/.cache/
+10.malvah-projects/public
 
 image-hover/.cache/
 image-hover/public

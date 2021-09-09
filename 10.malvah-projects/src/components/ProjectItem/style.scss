@@ -1,0 +1,118 @@
+@import "../../styles/mixins";
+
+.project-item-container {
+  cursor: pointer;
+  line-height: 1.25;
+  padding: 5px 0;
+
+  .title-item {
+    position: relative;
+  }
+  img {
+    position: fixed;
+    left: 45vw;
+    width: auto;
+    height: 20vw;
+    object-fit: cover;
+    top: 30vh;
+    pointer-events: none;
+
+    // This is to add timing function for  mouse image parallax
+    transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .info-block {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 70vw;
+
+    z-index: 1;
+    text-align: left;
+
+    font-size: 20px;
+
+    .info-block-header {
+      margin-bottom: 20px;
+      color: black;
+      font-weight: 500;
+      font-size: 24px;
+      svg {
+        margin-right: 4px;
+      }
+      span {
+        display: flex;
+        align-items: center;
+      }
+    }
+    p {
+      margin-bottom: 10px;
+      overflow: hidden;
+      color: #999;
+      span {
+        display: block;
+        opacity: 0;
+        transition: all 0.25s ease-in-out;
+
+        transform: translateY(10px);
+      }
+    }
+
+    &.as-active {
+      @for $i from 0 through 4 {
+        p:nth-child(#{$i + 1}n) {
+          span {
+            transition-delay: #{$i/10}s;
+          }
+        }
+      }
+      span {
+        transform: translateY(0px);
+
+        opacity: 1;
+      }
+    }
+  }
+  @include mq("tablet", max) {
+    padding: 25px 0;
+  }
+}
+
+.menu-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 8.5vw;
+  text-transform: lowercase;
+  z-index: 1;
+  line-height: 1.1;
+
+  &.clone {
+    position: absolute;
+    top: 0;
+    pointer-events: none;
+    color: black;
+    clip-path: inset(0 100% 0 0);
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  &:not(.clone) {
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.25);
+
+    color: transparent;
+
+    &:hover {
+      cursor: pointer;
+
+      ~ .clone {
+        clip-path: inset(0 0 0 0);
+      }
+      ~ .menu-image-container .menu-image {
+        opacity: 1;
+        transform: scale(1.1);
+        filter: blur(0) brightness(1);
+      }
+    }
+  }
+
+  @include mq("table") {
+  }
+}

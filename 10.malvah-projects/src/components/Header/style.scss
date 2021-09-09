@@ -1,0 +1,39 @@
+@import "../../styles/_mixins.scss";
+
+.overlay-nav {
+  display: none;
+  position: fixed;
+  top: 50px;
+  left: 70vw;
+  box-sizing: border-box;
+
+  z-index: 1;
+}
+.header-container {
+  // width: 100vw;
+  display: flex;
+  // justify-content: flex-end;
+
+  h1 {
+    cursor: pointer;
+    margin: 0 20px;
+    transition: opacity 0.35s ease-in-out;
+
+    &:hover {
+      color: var(--main-color);
+    }
+  }
+}
+
+.overlay-burger {
+  position: fixed;
+}
+
+@include mq("tablet", min) {
+  .overlay-burger {
+    display: none;
+  }
+  .overlay-nav {
+    display: block;
+  }
+}
