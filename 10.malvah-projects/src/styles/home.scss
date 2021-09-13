@@ -15,9 +15,10 @@ body {
   background-color: $bg-color;
 }
 
-// ::-webkit-scrollbar {
-//   display: none;
-// }
+::-webkit-scrollbar {
+  display: none;
+}
+
 .main-container {
   ul {
     scroll-behavior: smooth;
