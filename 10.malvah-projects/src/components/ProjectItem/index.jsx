@@ -1,32 +1,70 @@
-import React, { useRef } from "react";
-import { useContext } from "react";
-import { forwardRef } from "react";
-import { useState, useEffect } from "react";
+import React, { useRef, useReducer, useContext, useState } from "react";
 import cn from "classnames";
-import { Hash, Plus } from "react-feather";
+import { Hash } from "react-feather";
 import { CursorContext } from "../CustomCursor/CursorManager";
 import animate from "./animate";
 import Image from "./Image";
 import "./style.scss";
 import Title from "./Title";
 
+const initialState = {
+  rotationPosition: 0,
+  scale: 0.8,
+  parallaxPos: { x: 0, y: -20 },
+  opacity: 0,
+  active: false,
+};
+
+function reducer(state, action) {
+  switch (action.type) {
+    case "MOUSE/ENTER":
+      return { ...state, active: true };
+    case "MOUSE/LEAVE":
+      return { ...state, active: false };
+
+    case "MOUSE/COORDINATES": {
+      return {
+        ...state,
+        parallaxPos: action.payload,
+      };
+    }
+    case "CHANGE/ROTATION": {
+      return {
+        ...state,
+        rotationPosition: action.payload,
+      };
+    }
+
+    case "CHANGE/SCALE": {
+      return {
+        ...state,
+        scale: action.payload,
+      };
+    }
+
+    case "CHANGE/OPACITY": {
+      return {
+        ...state,
+        opacity: action.payload,
+      };
+    }
+    default:
+      throw new Error();
+  }
+}
 const ProjectItem = ({ project, itemIndex }) => {
   const listItem = useRef(null);
   const { setSize } = useContext(CursorContext);
-  const [rotationPosition, setRotation] = useState(0);
-  const [scale, setScale] = useState(0.8);
-  const [parallaxPos, setParallaxPos] = useState({ x: 0, y: -20 });
-  const [easeMethod, setEaseMethod] = useState("easeInOutCubic");
-  const [opacity, setOpacity] = useState(0);
 
-  const [active, setActive] = useState(false);
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const easeMethod = "easeInOutCubic";
 
   function parallax(event) {
     const speed = -5;
     const x = (window.innerWidth - event.pageX * speed) / 100;
     const y = (window.innerHeight - event.pageY * speed) / 100;
 
-    setParallaxPos({ x, y });
+    dispatch({ type: "MOUSE/COORDINATES", payload: { x, y } });
   }
 
   const handleSetRotation = () => {
@@ -35,10 +73,10 @@ const ProjectItem = ({ project, itemIndex }) => {
       Math.random() * 15 * (Math.round(Math.random()) ? 1 : -1);
 
     animate({
-      fromValue: rotationPosition,
+      fromValue: state.rotationPosition,
       toValue: newRotation,
       onUpdate: (value, callback) => {
-        setRotation(value);
+        dispatch({ type: "CHANGE/ROTATION", payload: value });
         callback();
       },
       onComplete: () => {},
@@ -52,7 +90,7 @@ const ProjectItem = ({ project, itemIndex }) => {
       fromValue: initialScale,
       toValue: newScale,
       onUpdate: (value, callback) => {
-        setScale(value);
+        dispatch({ type: "CHANGE/SCALE", payload: value });
         callback();
       },
       onComplete: () => {},
@@ -66,7 +104,7 @@ const ProjectItem = ({ project, itemIndex }) => {
       fromValue: initialOpacity,
       toValue: newOpacity,
       onUpdate: (value, callback) => {
-        setOpacity(value);
+        dispatch({ type: "CHANGE/OPACITY", payload: value });
         callback();
       },
       onComplete: () => {},
@@ -82,16 +120,16 @@ const ProjectItem = ({ project, itemIndex }) => {
     handleSetRotation();
     handleSetScale(0.8, 1, 500);
     handleOpacity(0, 1, 500);
-    setActive(true);
+    dispatch({ type: "MOUSE/ENTER" });
   };
 
   const handleMouseLeave = () => {
     setSize("small");
     handleSetScale(1, 0.8, 800);
     handleOpacity(1, 0, 800);
-    setActive(false);
+    dispatch({ type: "MOUSE/LEAVE" });
 
-    setParallaxPos({ x: 0, y: -20 });
+    dispatch({ type: "MOUSE/COORDINATES", payload: initialState.parallaxPos });
     listItem.current.removeEventListener("mousemove", parallax);
   };
   return (
@@ -103,13 +141,13 @@ const ProjectItem = ({ project, itemIndex }) => {
       />
       <Image
         url={project.url}
-        active={active}
-        scale={scale}
-        rotationPosition={rotationPosition}
-        parallaxPos={parallaxPos}
-        opacity={opacity}
+        active={state.active}
+        scale={state.scale}
+        rotationPosition={state.rotationPosition}
+        parallaxPos={state.parallaxPos}
+        opacity={state.opacity}
       />
-      <div className={cn("info-block", { "as-active": active })}>
+      <div className={cn("info-block", { "as-active": state.active })}>
         <p className="info-block-header">
           <span>
             <Hash />0{itemIndex}
