@@ -1,0 +1,37 @@
+@import "../../styles/_mixins.scss";
+
+.secondary-cursor {
+  z-index: 1000;
+
+  transform: translate3d(0, 0, 0);
+  position: fixed;
+  pointer-events: none;
+  transform-origin: center;
+  width: 48px;
+  height: 48px;
+
+  &:after,
+  &:before {
+    content: "";
+    width: 48px;
+    height: 2px;
+    position: absolute;
+    background-color: white;
+    // left: 50%;
+    top: 50%;
+    display: block;
+    will-change: transform;
+    // transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  &:after {
+    transform: rotate(90deg);
+  }
+
+}
+.project-title {
+  color: white;
+  position: fixed;
+  top: 40px;
+  z-index: 2;
+}

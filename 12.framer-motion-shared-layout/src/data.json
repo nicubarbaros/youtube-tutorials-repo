@@ -1,0 +1,132 @@
+[
+  {
+    "cover": "https://images.unsplash.com/photo-1641380140345-a8b91e58d4e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
+    "title": "Fashion",
+    "color": "#44523f",
+    "slug": "fashion",
+    "detailImages": [
+      "/images/woman/woman-1.jpeg",
+      "/images/woman/woman-2.jpeg",
+      "/images/woman/woman-3.jpeg",
+      "/images/woman/woman-4.jpeg",
+      "/images/woman/woman-5.jpeg",
+      "/images/woman/woman-6.jpeg",
+      "/images/woman/woman-7.jpeg"
+    ]
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1641382147376-0e5e0097babe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1N3x8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
+    "title": "Walls",
+    "slug": "walls",
+    "color": "#fa9584",
+    "detailImages": [
+      "/images/wall/wall-1.jpeg",
+      "/images/wall/wall-2.jpeg",
+      "/images/wall/wall-3.jpeg",
+      "/images/wall/wall-4.jpeg"
+    ]
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1641332096399-f294e427f2db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1MXx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
+
+    "title": "Ballet",
+    "slug": "ballet",
+    "color": "#6a6a6a",
+    "detailImages": [
+      "/images/ballet/ballet-1.jpeg",
+      "/images/ballet/ballet-2.jpeg",
+      "/images/ballet/ballet-3.jpeg",
+      "/images/ballet/ballet-4.jpeg",
+      "/images/ballet/ballet-5.jpeg",
+      "/images/ballet/ballet-6.jpeg"
+    ]
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1641320785764-17cd1ab58a42?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4OHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
+    "title": "Horses",
+    "color": "#363636",
+    "slug": "horse",
+    "detailImages": [
+      "/images/horse/horse-1.jpeg",
+      "/images/horse/horse-2.jpeg",
+      "/images/horse/horse-3.jpeg",
+      "/images/horse/horse-4.jpeg",
+      "/images/horse/horse-5.jpeg",
+      "/images/horse/horse-6.jpeg",
+      "/images/horse/horse-7.jpeg"
+    ]
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1641307114971-31425ef36688?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMDN8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    "title": "Smile faces",
+    "color": "#a0a0a0",
+    "slug": "smile",
+    "detailImages": [
+      "/images/smile/smile-1.jpeg",
+      "/images/smile/smile-2.jpeg",
+      "/images/smile/smile-3.jpeg",
+      "/images/smile/smile-4.jpeg",
+      "/images/smile/smile-5.jpeg"
+    ]
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1641400504445-99dc922bbe63?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80",
+    "title": "Darkness",
+    "color": "#141414",
+    "slug": "darkness",
+    "detailImages": [
+      "/images/darkness/darkness-1.jpeg",
+      "/images/darkness/darkness-2.jpeg",
+      "/images/darkness/darkness-3.jpeg",
+      "/images/darkness/darkness-4.jpeg"
+    ]
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1640909544250-da29eeb585e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE5fHFQWXNEenZKT1ljfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    "title": "Darkness",
+    "color": "#141414",
+    "slug": "darkness",
+    "detailImages": [
+      "/images/darkness/darkness-1.jpeg",
+      "/images/darkness/darkness-2.jpeg",
+      "/images/darkness/darkness-3.jpeg",
+      "/images/darkness/darkness-4.jpeg"
+    ]
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1640872571837-f9405b1bb933?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDIzfHFQWXNEenZKT1ljfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    "title": "Wood",
+    "color": "#7e624c",
+    "slug": "wood",
+    "detailImages": [
+      "/images/forest/forest-1.jpeg",
+      "/images/forest/forest-2.jpeg",
+      "/images/forest/forest-3.jpeg",
+      "/images/forest/forest-4.jpeg"
+    ]
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1572631382901-cf1a0a6087cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cG9ydHJhaXRzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    "title": "Woman bag",
+    "color": "#934633",
+    "slug": "bag",
+    "detailImages": [
+      "/images/bag/bag-1.jpeg",
+      "/images/bag/bag-2.jpeg",
+      "/images/bag/bag-3.jpeg",
+      "/images/bag/bag-4.jpeg"
+    ]
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1640872571837-f9405b1bb933?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDIzfHFQWXNEenZKT1ljfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    "title": "Wood",
+    "color": "#7e624c",
+    "slug": "wood",
+    "detailImages": [
+      "/images/forest/forest-1.jpeg",
+      "/images/forest/forest-2.jpeg",
+      "/images/forest/forest-3.jpeg",
+      "/images/forest/forest-4.jpeg"
+    ]
+  }
+]
