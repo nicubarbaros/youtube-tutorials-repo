@@ -42,6 +42,7 @@ build/Release
 8.work-page-effect/node_modules/
 9.animated-menu/node_modules/
 10.malvah-projects/node_modules/
+12.framer-motion-shared-layout/node_modules/
 image-hover/node_modules/
 
 jspm_packages/
@@ -91,9 +92,15 @@ typings/
 10.malvah-projects/.cache/
 10.malvah-projects/public
 
+12.framer-motion-shared-layout/.cache/
+12.framer-motion-shared-layout/public
+
 image-hover/.cache/
 image-hover/public
 
+#full projects
+11.gatsby-and-framer-motion
+12.framer-motion-shared-layout
 # Mac files
 .DS_Store
 
