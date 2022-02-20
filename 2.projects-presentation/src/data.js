@@ -29,6 +29,7 @@ const imageData = [
 const videoData = [
   {
     mediaUrl: "https://player.vimeo.com/video/477735526?background=1",
+		
     title: "KAMCHATKA",
   },
   {
