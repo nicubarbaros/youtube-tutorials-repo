@@ -1,0 +1,18 @@
+.full-loader{
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	background-color: black;
+	z-index: 100;
+	color: white;
+	font-size: 5rem;
+	text-transform: capitalize;
+	display: flex;
+	align-items: center;
+	font-weight: 500;
+	justify-content: center;
+	pointer-events: none;
+	
+}

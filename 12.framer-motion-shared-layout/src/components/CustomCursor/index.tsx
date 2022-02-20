@@ -2,9 +2,11 @@ import React, { useContext, useEffect } from "react";
 import { CursorContext } from "./CursorManager";
 import "./style.scss";
 
+function lerp(start: number, end: number, amt: number) {
+  return (1 - amt) * start + amt * end;
+}
 const CustomCursor = ({ speed = 0.1 }) => {
   const { projectTitle } = useContext(CursorContext);
-  const titleRef = React.useRef<HTMLDivElement>(null);
   const mainCursor = React.useRef<HTMLDivElement>(null);
   const positionRef = React.useRef({
     mouseX: 0,
@@ -18,18 +20,15 @@ const CustomCursor = ({ speed = 0.1 }) => {
 
   useEffect(() => {
     document.addEventListener("mousemove", (event) => {
-      if (positionRef.current && mainCursor.current && titleRef.current) {
+      if (positionRef.current && mainCursor.current) {
         const { clientX, clientY } = event;
 
         const mouseX = clientX;
         const mouseY = clientY;
-
-        positionRef.current.mouseX = mouseX - titleRef.current.clientWidth / 2;
-        positionRef.current.mouseY = mouseY - titleRef.current.clientHeight / 2;
-
-        mainCursor.current.style.transform = `translate3d(${mouseX -
-          mainCursor.current.clientWidth / 2}px, ${mouseY -
-          mainCursor.current.clientHeight / 2}px, 0)`;
+        positionRef.current.mouseX =
+          mouseX - mainCursor.current.clientWidth / 2;
+        positionRef.current.mouseY =
+          mouseY - mainCursor.current.clientHeight / 2;
       }
     });
 
@@ -48,11 +47,11 @@ const CustomCursor = ({ speed = 0.1 }) => {
         distanceY,
       } = positionRef.current;
       if (!destinationX || !destinationY) {
-        positionRef.current.destinationX = mouseX;
-        positionRef.current.destinationY = mouseY;
+        positionRef.current.destinationX = lerp(0, mouseX, 0.2);
+        positionRef.current.destinationY = lerp(0, mouseY, 0.2);
       } else {
-        positionRef.current.distanceX = (mouseX - destinationX) * speed;
-        positionRef.current.distanceY = (mouseY - destinationY) * speed;
+        positionRef.current.distanceX = lerp(destinationX, mouseX, 0.2);
+        positionRef.current.distanceY = lerp(destinationY, mouseY, 0.2);
         if (
           Math.abs(positionRef.current.distanceX) +
             Math.abs(positionRef.current.distanceY) <
@@ -61,12 +60,12 @@ const CustomCursor = ({ speed = 0.1 }) => {
           positionRef.current.destinationX = mouseX;
           positionRef.current.destinationY = mouseY;
         } else {
-          positionRef.current.destinationX += distanceX;
-          positionRef.current.destinationY += distanceY;
+          positionRef.current.destinationX = distanceX;
+          positionRef.current.destinationY = distanceY;
         }
       }
-      if (titleRef && titleRef.current)
-        titleRef.current.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`;
+      if (mainCursor && mainCursor.current)
+        mainCursor.current.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`;
     };
     followMouse();
   }, [speed]);
@@ -74,9 +73,6 @@ const CustomCursor = ({ speed = 0.1 }) => {
   return (
     <div className="cursor-wrapper">
       <div className="secondary-cursor" ref={mainCursor}></div>
-      <div className="project-title" ref={titleRef}>
-        {projectTitle}
-      </div>
     </div>
   );
 };
