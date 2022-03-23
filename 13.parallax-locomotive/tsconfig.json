@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    /* Config options */
+    "target": "es2018",
+    "module": "esNext",
+    "lib": ["esnext", "dom"],
+    "allowJs": true,
+    "checkJs": false,
+    "jsx": "preserve",
+
+    "noEmit": true,
+
+    /* Strict checks */
+    "strict": true,
+    "noImplicitAny": true,
+
+    /* Additional Checks */
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+
+    "noErrorTruncation": true,
+
+    /* Module Resolution Options */
+    "baseUrl": ".",
+    "paths": {
+      /* Support absolute /imports/* with a leading '/' */
+      "/*": ["*"]
+    },
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "types": [],
+    // "typeRoots": ["./@types"],
+    "esModuleInterop": true,
+		"skipLibCheck": true
+  },
+  "exclude": [
+    "node_modules",
+  ]
+}

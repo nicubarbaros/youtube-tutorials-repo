@@ -1,0 +1,12 @@
+@import "../../styles/_mixins.scss";
+
+.secondary-cursor {
+  z-index: 1000;
+
+  position: fixed;
+  pointer-events: none;
+  width: 10px;
+  height: 10px;
+  background-color: #bdff00;
+  border-radius: 100%;
+}

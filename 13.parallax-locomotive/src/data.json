@@ -1,0 +1,122 @@
+[
+  {
+    "cover": "https://images.unsplash.com/flagged/photo-1572465213253-31b7e7f634ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1016&q=10",
+    "title": "Mexico",
+    "color": "#b22c3b",
+    "slug": "mexico"
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2392&q=10",
+    "title": "Japan",
+    "slug": "japan",
+    "color": "#2b414e"
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1591273688202-4cfb3531c7a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=988&q=10",
+    "title": "Seoul",
+    "slug": "seoul",
+    "color": "#a2ad9e"
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1603258740665-711401f368bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=10",
+    "title": "Beijing",
+    "color": "#432c30",
+    "slug": "beijing"
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1562569633-622303bafef5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=10",
+    "title": "Africa",
+    "color": "#e2e1df",
+    "slug": "africa"
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1516834611397-8d633eaec5d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=10",
+    "title": "Brazil",
+    "color": "#2f2e29",
+    "slug": "brazil"
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1580834341580-8c17a3a630ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2148&q=10",
+    "title": "Jordan",
+    "color": "#282625",
+    "slug": "jordan"
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1609793654930-1bfbefe939d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=988&q=10",
+    "title": "Oslo",
+    "color": "#48a1c4",
+    "slug": "oslo"
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1550109161-7262e652bf82?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3432&q=10",
+    "title": "Los Angeles",
+    "color": "#fd9025",
+    "slug": "lost-angeles"
+  },
+  {
+    "cover": "https://images.unsplash.com/flagged/photo-1559717865-a99cac1c95d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2371&q=10",
+    "title": "Dubai",
+    "color": "#60769c",
+    "slug": "dubai"
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1519802772250-a52a9af0eacb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=10",
+    "title": "India",
+    "color": "#7e624c",
+    "slug": "india"
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1616246686486-a4a886f23ac6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=981&q=10",
+    "title": "Venice",
+    "color": "#7e624c",
+    "slug": "venice"
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1487059945380-7679a205ab7d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=10",
+    "title": "Bangkok",
+    "color": "#7e624c",
+    "slug": "bangkok"
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1612178581595-188522a58817?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1365&q=10",
+    "title": "Copenhagen",
+    "color": "#7e624c",
+    "slug": "copenhagen"
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1612948083952-f5f0aab2a799?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=10",
+    "title": "London",
+    "color": "#7e624c",
+    "slug": "london"
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1525989435953-a90190a1dd4d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1336&q=10",
+    "title": "Florence",
+    "color": "#7e624c",
+    "slug": "florence"
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1569668444050-b7bc2bfec0c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=10",
+    "title": "Edinburgh",
+    "color": "#7e624c",
+    "slug": "edinburgh"
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1541702467897-41915a07d3a7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=10",
+    "title": "New York",
+    "color": "#7e624c",
+    "slug": "new-york"
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1602167352863-04e8d262d56f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2372&q=10",
+    "title": "Reykjavik",
+    "color": "#7e624c",
+    "slug": "reykjavik"
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1541343672885-9be56236302a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=10",
+    "title": "Budapest",
+    "color": "#7e624c",
+    "slug": "budapest"
+  }
+]
