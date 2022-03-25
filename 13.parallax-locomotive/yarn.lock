@@ -1288,6 +1288,84 @@
   "resolved" "https://registry.npmjs.org/@microsoft/fetch-event-source/-/fetch-event-source-2.0.1.tgz"
   "version" "2.0.1"
 
+"@motionone/animation@^10.7.0":
+  "integrity" "sha512-TMsa4i5J6Lhl0CzEJM0umzW/ChTY5tIQ0Xcwi/nqw4OAOnpCoKWb4SDqT8Afx7WZ9+rw1/lZyRbB7ND52ibFPg=="
+  "resolved" "https://registry.npmjs.org/@motionone/animation/-/animation-10.7.0.tgz"
+  "version" "10.7.0"
+  dependencies:
+    "@motionone/easing" "^10.7.0"
+    "@motionone/types" "^10.7.0"
+    "@motionone/utils" "^10.7.0"
+    "tslib" "^2.3.1"
+
+"@motionone/dom@^10.7.0":
+  "integrity" "sha512-aPXbpFJJtqeJWXolFDG77YZ+FTnQqQzdkaNvzPAi3H3sWeSGttRJWYprKo1EWcYCDKDGmvptftBC2Xt8EvK2bQ=="
+  "resolved" "https://registry.npmjs.org/@motionone/dom/-/dom-10.7.0.tgz"
+  "version" "10.7.0"
+  dependencies:
+    "@motionone/animation" "^10.7.0"
+    "@motionone/generators" "^10.7.0"
+    "@motionone/types" "^10.7.0"
+    "@motionone/utils" "^10.7.0"
+    "hey-listen" "^1.0.8"
+    "tslib" "^2.3.1"
+
+"@motionone/easing@^10.7.0":
+  "integrity" "sha512-FqGcVUel8NnYuXygnJ2KfiIfiySmpXhbTH/0icbRwjqPVVBd5k8+PCCrxJtFYD3LFKBUk2tT3fd01Y/j78+OUw=="
+  "resolved" "https://registry.npmjs.org/@motionone/easing/-/easing-10.7.0.tgz"
+  "version" "10.7.0"
+  dependencies:
+    "@motionone/utils" "^10.7.0"
+    "tslib" "^2.3.1"
+
+"@motionone/generators@^10.7.0":
+  "integrity" "sha512-l+F5bcszVN3YzMYEKyNE2TKilCe7l4B0BgSyjAvHCs37rXeUoJFv0B+UHAE1NL6iHzQ9s8Z5MUAGqyW/D0ymHQ=="
+  "resolved" "https://registry.npmjs.org/@motionone/generators/-/generators-10.7.0.tgz"
+  "version" "10.7.0"
+  dependencies:
+    "@motionone/types" "^10.7.0"
+    "@motionone/utils" "^10.7.0"
+    "tslib" "^2.3.1"
+
+"@motionone/react@^10.7.0":
+  "integrity" "sha512-9R/eqJQxtXZa92PsG/KOGLerJ+LDXCYRH4CigF23G8J5utMXaFthAP1XBnrRClMvA1rupGlnUhTCVFcEvuqntw=="
+  "resolved" "https://registry.npmjs.org/@motionone/react/-/react-10.7.0.tgz"
+  "version" "10.7.0"
+  dependencies:
+    "@motionone/dom" "^10.7.0"
+    "hey-listen" "^1.0.8"
+    "tslib" "^2.3.1"
+
+"@motionone/svelte@^10.7.0":
+  "integrity" "sha512-P8CD03GF0Ce8Xo/MjsmoIoiFHOi7NTUfDYb16s3tIYgzEgT0yxrRdaBh/e5tElMgIZsG5BlSfxCvxo4z3tNJMA=="
+  "resolved" "https://registry.npmjs.org/@motionone/svelte/-/svelte-10.7.0.tgz"
+  "version" "10.7.0"
+  dependencies:
+    "@motionone/dom" "^10.7.0"
+    "tslib" "^2.3.1"
+
+"@motionone/types@^10.7.0":
+  "integrity" "sha512-Sb29czMqFj0GckrbfWlrp9/DjaO+mOdORFGqQ7jNCV4pqx/jKHZsRTX7cZrjLPAQJrfEQu02dMcMHZOhsCiBBA=="
+  "resolved" "https://registry.npmjs.org/@motionone/types/-/types-10.7.0.tgz"
+  "version" "10.7.0"
+
+"@motionone/utils@^10.7.0":
+  "integrity" "sha512-p8hAaIYE1JmaeduHhunjLUPFFWk+7MskCLcFTuJGTLVKWkWC6lLjswVV/Himkg2IHOqnbSRgqHb8y3jpIoPuMQ=="
+  "resolved" "https://registry.npmjs.org/@motionone/utils/-/utils-10.7.0.tgz"
+  "version" "10.7.0"
+  dependencies:
+    "@motionone/types" "^10.7.0"
+    "hey-listen" "^1.0.8"
+    "tslib" "^2.3.1"
+
+"@motionone/vue@^10.7.0":
+  "integrity" "sha512-28Ip/hR8GLBieNiZ4IcmSrBHEPY6UiSp4+iidpOlG5GTLLWXxl7Pzqhbe6i9BTNpEY9yc2AdplQ6LEe/yxaPqQ=="
+  "resolved" "https://registry.npmjs.org/@motionone/vue/-/vue-10.7.0.tgz"
+  "version" "10.7.0"
+  dependencies:
+    "@motionone/dom" "^10.7.0"
+    "tslib" "^2.3.1"
+
 "@nodelib/fs.scandir@2.1.5":
   "integrity" "sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g=="
   "resolved" "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz"
@@ -7400,6 +7478,17 @@
   "resolved" "https://registry.npmjs.org/moment/-/moment-2.29.1.tgz"
   "version" "2.29.1"
 
+"motion@^10.7.0":
+  "integrity" "sha512-O6eMDzspPnTcU3IfmwZl8uY5t6DndbJEEnWBw+OqZSCLeSaDs4+gB0JnvqFkyrGl8vpE9H3UrRD5RDy1Z3TZmw=="
+  "resolved" "https://registry.npmjs.org/motion/-/motion-10.7.0.tgz"
+  "version" "10.7.0"
+  dependencies:
+    "@motionone/animation" "^10.7.0"
+    "@motionone/dom" "^10.7.0"
+    "@motionone/react" "^10.7.0"
+    "@motionone/svelte" "^10.7.0"
+    "@motionone/vue" "^10.7.0"
+
 "ms@^2.1.1", "ms@2.1.2":
   "integrity" "sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w=="
   "resolved" "https://registry.npmjs.org/ms/-/ms-2.1.2.tgz"
@@ -10053,7 +10142,7 @@
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   "version" "1.14.1"
 
-"tslib@^2", "tslib@^2.0.3", "tslib@^2.1.0", "tslib@^2.3.0", "tslib@~2.3.0":
+"tslib@^2", "tslib@^2.0.3", "tslib@^2.1.0", "tslib@^2.3.0", "tslib@^2.3.1", "tslib@~2.3.0":
   "integrity" "sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw=="
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.3.1.tgz"
   "version" "2.3.1"

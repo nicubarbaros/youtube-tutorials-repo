@@ -7,13 +7,47 @@ body {
 
 :root {
   --main-color: #394437;
+  --secondary-color: #3d5549;
   --bg-color: #acbe9e;
+  --loader-color: #6c8c77;
 }
 
 body {
   font-family: "Space Grotesk", sans-serif;
 
   background-color: var(--bg-color);
+}
+
+.loader-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  display: flex;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  background-color: var(--loader-color);
+
+  .counter-container {
+    overflow: hidden;
+    height: 30vw;
+    min-height: 30vw;
+  }
+
+  h3 {
+    z-index: 9999;
+    margin-top: 0px;
+    margin-bottom: 1vw;
+    color: var(--secondary-color);
+    font-size: 30vw;
+    line-height: 30vw;
+    font-weight: 300;
+  }
 }
 .hero-container {
   position: relative;
@@ -23,7 +57,7 @@ body {
     height: 100%;
     object-fit: cover;
   }
-  h1 {
+  .hero-title {
     position: absolute;
     bottom: 5vw;
     left: 5vw;
