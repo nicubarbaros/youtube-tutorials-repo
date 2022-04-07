@@ -8,7 +8,7 @@ import "../styles/home.scss";
 import { TimelineDefinition } from "@motionone/dom/types/timeline/types";
 import useLocomotiveScroll from "../hooks/useLocomotiveScroll";
 
-const preloadImages = (selector) => {
+const preloadImages = (selector: string) => {
   return new Promise((resolve) => {
     imagesLoaded(
       document.querySelectorAll(selector),
@@ -29,10 +29,10 @@ export default function Home() {
   const countRef2 = useRef<HTMLUListElement | null>(null);
   const loaderRef = useRef<HTMLDivElement | null>(null);
 
-  const titleRef = useRef<HTMLHeadElement | null>(null);
-  const imageRef = useRef<HTMLHeadElement | null>(null);
+  const titleRef = useRef<HTMLHeadingElement | null>(null);
+  const imageRef = useRef<HTMLImageElement | null>(null);
 
-  const locomotiveRef = useLocomotiveScroll({
+  const [locomotiveRef] = useLocomotiveScroll({
     ref: scrollRef,
     smooth: true,
     smoothMobile: true,
@@ -40,9 +40,11 @@ export default function Home() {
 
   useEffect(() => {
     // Preload images
-    // Promise.all([preloadImages(".grid-item-media")]).then(() => {
-    //   locomotiveRef.update();
-    // });
+    Promise.all([preloadImages(".grid-item-media")]).then(() => {
+      if (locomotiveRef.current) {
+        locomotiveRef.current.update();
+      }
+    });
   }, []);
 
   useEffect(() => {
@@ -126,6 +128,7 @@ export default function Home() {
         <div className="hero-container">
           <div data-scroll data-scroll-speed="-8" className="hero-image">
             <img
+              className="grid-item-media"
               ref={imageRef}
               src="https://images.unsplash.com/photo-1595169269486-4e46d9b9a8d4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
             />
