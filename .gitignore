@@ -44,7 +44,7 @@ build/Release
 10.malvah-projects/node_modules/
 13.parallax-locomotive/node_modules/
 image-hover/node_modules/
-
+scroll-trigger/node_modules/
 jspm_packages/
 
 # Typescript v1 declaration files
@@ -97,7 +97,8 @@ typings/
 
 image-hover/.cache/
 image-hover/public
-
+scroll-trigger/.cache/
+scroll-trigger/public
 #full projects
 11.gatsby-and-framer-motion
 12.framer-motion-shared-layout
